@@ -1,4 +1,4 @@
-"""Storm removal in WRF met_em files for the multi-coast runs (NC upgrade, 2026-11-01).
+"""Storm removal in WRF met_em files for the runs on six coasts.
 
 Generalises paper/scripts/model/wrf/metem_filter.py (Guangdong) to any coast and adds the WIDEL edit used by the
 GraphCast all-exposure-day test (A2), so that WRF and GraphCast remove the same thing:

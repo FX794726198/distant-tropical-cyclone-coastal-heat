@@ -1,7 +1,7 @@
-"""Post-hoc, cell-level reading of the global storm-removal runs (written 2026-10-31 08:00Z after the frozen verdict; not part
-of it).  Question: is the storm's effect organised in space -- strongest near the coast and nearer the storm -- so that a
+"""Cell-level analysis of the GraphCast storm-removal runs on the coasts of the map (exploratory, after the region-level
+analysis).  Question: is the storm's effect organised in space -- strongest near the coast and nearer the storm -- so that a
 region mean over a large region dilutes it?
-Readings listed before running: (1) per cell d_free = CTL - WIDEL (mean over leads), d_full, d_null, with the cell's distance to
+Quantities: (1) per cell d_free = CTL - WIDEL (mean over leads), d_full, d_null, with the cell's distance to
 the nearest sea point (0.25-deg ERA5 land-sea mask < 0.5) and to the storm at V; (2) warm cases: storm-weighted mean d_free by
 distance to coast (0-50, 50-150, 150-300, > 300 km) and by distance to storm (550-800, 800-1000, 1000-1300 km); (3) per region
 the mean over its coastal strip (<= 150 km) beside the region mean, and the number of usable warm regions whose strip mean

@@ -1,4 +1,4 @@
-"""Global storm-removal test (analysis A, frozen 2026-10-30): GraphCast CTL / NOTC / WIDE / WIDEL / NULLW rollouts for the
+"""Storm removal in GraphCast on the coasts of the global map: GraphCast CTL / NOTC / WIDE / WIDEL / NULLW rollouts for the
 cases of gcg_select.py, one region per case.  Edits as in the pilot (gc_build, rev_build): NOTC = core disk infill with
 R = min(800, dmin - 150) km; WIDE = NOTC + axisymmetric outer circulation removed to 1,500 km; WIDEL = NOTC + outer removal
 ending 50 km before the nearest region cell; NULLW = the WIDE procedure at a storm-free sea point on the far side of the

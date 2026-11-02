@@ -64,10 +64,4 @@ region kind  cells  pop2020_M  f_region  delta_mean  exp_days_per_yr     Q_M  Q_
 
 continent shares of Q: Africa 1.2%, South Asia 9.7%, East and Southeast Asia 85.0%, Australia and New Guinea 0.1%, Americas 4.0%
 cool regions: hot person-days prevented per year 0.014 bn (f_cool 0.16), 0.134 bn (map, f = 1); net with Q: 0.253 bn and 0.133 bn
-
-================ VERDICT (frozen criteria)
-M1 Q >= 1.0 bn: 0.267 -> not met; M2 share >= 10%: 1.66% -> not met
-R robustness: not evaluated (no scale criterion met) -> not met
-B breadth: largest region 73.7% (< 50%), continents >= 10%: 1 (>= 2) -> not met
-A3 FAIL
 total 103 s

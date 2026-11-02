@@ -1,4 +1,4 @@
-"""A4 ERA5 fingerprint of the 23 warm regions (plan plan A4 (internal); exploratory).
+"""A4 ERA5 fingerprint of the 23 warm regions (exploratory).
 From the second step of the global map (gl_s2_regions.csv: excess over circulation analogues) and the seaward unit
 vectors (coast_normals.py): onshore 10-m wind excess = -(u10_ex nx + v10_ex ny); class dry (q850 < 0 and rain < 0),
 moist (q850 > 0) or other.

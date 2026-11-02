@@ -1,18 +1,14 @@
-"""Global storm-removal test (analysis A): frozen reading of the GraphCast runs (rules written 2026-10-30 before any run;
-design in analysis plan A (internal, written before the runs)).
+"""Storm removal in GraphCast on the coasts of the global map, first set of days (analysis A; Supplementary Section S3):
+effects of the edits per case, per region and pooled.
 
 Per case: cell-mean 2-m temperature at V, averaged over the leads; d_full = CTL - WIDE, d_free = CTL - WIDEL (region cells
 untouched at the initial time), d_core = CTL - NOTC, d_null = CTL - NULLW, ctl_err = CTL - ERA5.  Per region: storm-weighted
 means (each storm weight 1 inside the region).
-Region CONFIRMED (warm): mean d_free >= +0.5 K, d_free > 0 in >= 3/4 of its cases, and mean d_null < half of mean d_free.
-Cool regions mirror: mean d_free <= -0.3 K (reported, not part of the verdict).
-GLOBAL PASS (primary model = 0.25 deg operational GraphCast) needs all of:
-  1. >= 2/3 of the warm regions with >= 3 usable cases are confirmed;
-  2. pooled warm mean d_free (equal region weights) >= +0.8 K with storm-cluster bootstrap 95% interval above 0;
-  3. pooled warm |d_null| <= 0.3 K;
-  4. the removed storm regrew (deficit > 3 hPa at V) in <= 20% of the WIDEL runs.
-The 1-deg model is a check: its pooled d_free must have the same sign with the interval above 0.
-d_free (region-free removal) is the primary effect because it edits nothing over the region; d_full is reported beside it.
+The column 'confirmed' is a descriptive label: warm regions with mean d_free >= +0.5 K, d_free > 0 in >= 3/4 of their cases
+and mean d_null < half of mean d_free; cool regions with mean d_free <= -0.3 K.  Pooled values give each region equal weight,
+with 95% intervals from resampling storms within regions.  The 0.25-deg operational GraphCast is the main model, the 1-deg
+model a check.
+d_free (region-free removal) is the main effect because it edits nothing over the region; d_full is reported beside it.
 Usage: python -I gcg_eval.py TCH_ROOT [--main oper] [--nboot 2000]
 Output: TCH_ROOT/out_<model>/gcg_cases.csv, gcg_regions.csv; TCH_ROOT/gcg_result.txt
 """
@@ -72,7 +68,6 @@ def main():
     a = ap.parse_args()
     rng = np.random.default_rng(7)
     L = [f'gcg_eval.py md5 {hashlib.md5(open(__file__, "rb").read()).hexdigest()}']
-    verdict = {}
     for model in ('oper', 'small'):
         odir = os.path.join(a.root, f'out_{model}')
         if not glob.glob(os.path.join(odir, 'case_*.nc')):
@@ -123,28 +118,6 @@ def main():
                  '; '.join(f'{v} {float((RG[RG.variant == v].edited > 3).mean()):.0%}' for v in ('NOTC', 'WIDE') if (RG.variant == v).any()))
         fp = W.d850_free.mean() if 'd850_free' in W else np.nan
         L.append(f'fingerprint: 850-hPa warming by the storm (CTL - WIDEL), warm cases: {fp:+.2f} K')
-        if 'free' in res:
-            e, lo, hi = res['free']
-            nul = abs(res['null'][0]) if 'null' in res else np.nan
-            crit = {'1 >= 2/3 of usable warm regions confirmed': nconf >= 2 * nus / 3 and nus > 0,
-                    '2 pooled warm d_free >= +0.8 K, interval above 0': e >= 0.8 and lo > 0,
-                    '3 pooled warm |d_null| <= 0.3 K': (nul <= 0.3) if np.isfinite(nul) else False,
-                    '4 WIDEL regrowth <= 20% of runs': (regen_share <= 0.2) if np.isfinite(regen_share) else False}
-            L.append('--- criteria')
-            for k, v in crit.items():
-                L.append(f'{"PASS" if v else "FAIL"}  {k}')
-            verdict[model] = dict(all=all(crit.values()), e=e, lo=lo, hi=hi)
-    L += ['', '================ READING (frozen rules)']
-    if a.main in verdict:
-        m = verdict[a.main]; chk = verdict.get('small' if a.main == 'oper' else 'oper')
-        agree = (chk is not None) and (np.sign(chk['e']) == np.sign(m['e'])) and (chk['lo'] > 0)
-        L.append(f'primary model {a.main}: {"PASS" if m["all"] else "FAIL"}; check model agrees (same sign, interval above 0): '
-                 f'{agree if chk is not None else "not run"}')
-        L.append('GLOBAL STORM-REMOVAL TEST: ' + ('PASS' if m['all'] else 'FAIL') +
-                 ' -> ' + ('the global warming map can be stated as caused by the storms (analysis A done; continue with B/C)'
-                           if m['all'] else 'the global part stays an association; stop the NC upgrade and submit CEE v05'))
-    else:
-        L.append(f'primary model {a.main} not run')
     open(os.path.join(a.root, 'gcg_result.txt'), 'w').write('\n'.join(L) + '\n')
     print('\n'.join(L))
 

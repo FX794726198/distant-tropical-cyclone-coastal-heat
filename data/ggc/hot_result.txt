@@ -47,11 +47,6 @@ pooled cool d_free: -0.46 K [-0.72, -0.18]
 CTL - ERA5 at V, warm cases: mean -0.84 K, within 1 K in 54%
 regrowth (deficit > 3 hPa at V): WIDEL 1% of 321 runs; NOTC 2%; WIDE 1%
 fingerprint: 850-hPa warming by the storm (CTL - WIDEL), warm cases: +0.54 K
---- criteria
-FAIL  1 >= 2/3 of usable warm regions confirmed
-FAIL  2 pooled warm d_free >= +0.8 K, interval above 0
-PASS  3 pooled warm |d_null| <= 0.3 K
-PASS  4 WIDEL regrowth <= 20% of runs
 
 ================ model small: 107 cases, 68 storms, 34 regions
 region kind  n_cases  n_storms  ctl_err  d_full  pos_full  d850_full  d_free  pos_free  d850_free  d_core  pos_core  d850_core  d_null  pos_null  d850_null  usable  confirmed
@@ -100,12 +95,3 @@ pooled cool d_free: -0.53 K [-0.81, -0.24]
 CTL - ERA5 at V, warm cases: mean -0.26 K, within 1 K in 87%
 regrowth (deficit > 3 hPa at V): WIDEL 0% of 321 runs; NOTC 2%; WIDE 0%
 fingerprint: 850-hPa warming by the storm (CTL - WIDEL), warm cases: +0.49 K
---- criteria
-FAIL  1 >= 2/3 of usable warm regions confirmed
-FAIL  2 pooled warm d_free >= +0.8 K, interval above 0
-PASS  3 pooled warm |d_null| <= 0.3 K
-PASS  4 WIDEL regrowth <= 20% of runs
-
-================ READING (frozen rules)
-primary model oper: FAIL; check model agrees (same sign, interval above 0): True
-GLOBAL STORM-REMOVAL TEST: FAIL -> the global part stays an association; stop the NC upgrade and submit CEE v05

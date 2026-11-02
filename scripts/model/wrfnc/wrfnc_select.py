@@ -1,8 +1,8 @@
-"""Multi-coast WRF storm-removal runs (NC upgrade, 2026-11-01): pick the cases, write the tracks and the WRF domains.
+"""WRF storm-removal runs on six coasts (Supplementary Section S7): pick the cases, write the tracks and the WRF domains.
 
 Cases come from the GraphCast all-exposure-day set (A2, paper/data/ggc/all_gc_cases.csv), so WRF and GraphCast can be
-compared on the same days.  Rule (written before any WRF run, applied with the observed map anomaly only, never with a
-model result): per coast, the exposure days of three different storms with the largest map anomaly in the coast's own
+compared on the same days.  Rule (uses only the observed map anomaly, never a model result):
+ per coast, the exposure days of three different storms with the largest map anomaly in the coast's own
 direction (warm coasts: largest; cool coasts: most negative), storm at least 600 km from the region centre on the case
 day, and not one of the two-storm days flagged in geometry_flagged_cases.csv.  Guangdong Megi and Mangkhut (the clean
 pilot pairs) are rerun with the WIDEL edit so that all coasts use the same counterfactual.

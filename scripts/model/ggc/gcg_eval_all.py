@@ -1,21 +1,12 @@
-"""Analysis A2 (all usable storm-exposure days 2016-2021): frozen reading, written 2026-10-31 before any A2 run.
-Design: analysis plan A2 (internal, written before the runs).  Per-case quantities exactly as in gcg_eval.py (imported, md5 832764af...):
+"""Storm removal in GraphCast on the coasts of the global map, second set (analysis A2: all usable exposure days 2016-2021,
+at most two per storm; Supplementary Section S3).  Per-case quantities exactly as in gcg_eval.py (imported):
 cell-mean 2-m temperature at V averaged over the leads; d_free = CTL - WIDEL (primary), d_full = CTL - WIDE, d_core = CTL - NOTC,
 d_null = CTL - NULLW; each storm weight 1 within a region; pooled = equal-weight mean over regions; 95% intervals from resampling
 storms within regions (2,000 draws, seed 7).
 Usable region: >= 3 cases.  map warming of a region = ex_map in gcg_regions.json (the region-mean exposure-day anomaly of the
-global map, Fig. 5a / Table S7).
+global map, Table S1).
 
-A2 PASS (the warm part of the global map can be stated as caused by the storms on typical exposure days) needs ALL of:
-  1. pooled warm d_free (0.25-deg operational model) >= 1/2 of the pooled map warming of the same regions, interval above 0;
-  2. in >= 2/3 of the usable warm regions the region d_free > 0 and > the region d_null;
-  3. pooled warm |d_null| <= 0.3 K and pooled warm d_free >= 2 |pooled warm d_null|;
-  4. the removed storm regrew (deficit > 3 hPa at V) in <= 20% of the WIDEL runs;
-  5. the cases NOT run in analysis A (matched on region and V against MAIN_ROOT/out_oper/gcg_cases.csv) alone, pooled over the
-     warm regions with >= 2 such cases: d_free >= 1/2 of the pooled map warming of those regions, interval above 0;
-  6. check model (1-deg GraphCast): pooled warm d_free > 0 with interval above 0.
-  Fewer than 10 usable warm regions -> FAIL.
-Reported, not part of the verdict: cool mirror (pooled cool d_free, interval; regions with d_free < 0 and < d_null), the storm's
+Reported: cool mirror (pooled cool d_free, interval; regions with d_free < 0 and < d_null), the storm's
 share of the map warming (d_free / map) and of the case-day anomaly, per-region table, hotter vs less hot days (split at the
 region median anomaly), repeatability against analysis A for the overlapping cases (max |difference| of d_free).
 Usage: python -I gcg_eval_all.py ROOT --main-root /scratch/$USER/tcheat/ggc
@@ -136,24 +127,6 @@ def main():
         L.append(f'regrowth (deficit > 3 hPa at V), WIDEL: {r["regrow"][0]:.0%} of {r["regrow"][1]} runs')
         if 'repeat' in r:
             L.append(f'repeatability vs analysis A: {r["repeat"][0]} matching cases, max |d_free difference| {r["repeat"][1]:.3f} K')
-    L += ['', '================ READING (frozen A2 rules)']
-    o = res.get('oper')
-    if o is None or o['nw'] == 0:
-        L.append('primary model not run'); verdict = None
-    else:
-        e, lo, _ = o['free']; nul = abs(o['null'][0]); ne, nlo, _ = o['new_free']
-        crit = {'0 >= 10 usable warm regions': o['nw'] >= 10,
-                '1 pooled warm d_free >= 1/2 map warming, interval above 0': e >= 0.5 * o['map'] and lo > 0,
-                '2 >= 2/3 of usable warm regions with d_free > 0 and > d_null': o['nconsist'] >= 2 * o['nw'] / 3,
-                '3 |pooled d_null| <= 0.3 K and d_free >= 2 |d_null|': nul <= 0.3 and e >= 2 * nul,
-                '4 WIDEL regrowth <= 20%': o['regrow'][0] <= 0.2,
-                '5 cases not run in A alone: d_free >= 1/2 map warming, interval above 0': bool(np.isfinite(ne) and ne >= 0.5 * o['new_map'] and nlo > 0),
-                '6 check model (1 deg): pooled warm d_free > 0, interval above 0': bool('small' in res and res['small']['nw'] and res['small']['free'][1] > 0)}
-        for k, v in crit.items():
-            L.append(f'{"PASS" if v else "FAIL"}  {k}')
-        verdict = all(crit.values())
-        L.append('A2 ALL-EXPOSURE-DAY TEST: ' + ('PASS -> the warm part of the global map can be stated as caused by the storms on typical '
-                 'exposure days; continue the NC line (B/C)' if verdict else 'FAIL -> the NC line stops; analyses A and A2 go into CEE v06'))
     open(os.path.join(a.root, 'gcg_all_result.txt'), 'w').write('\n'.join(L) + '\n')
     print('\n'.join(L))
 

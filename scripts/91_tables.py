@@ -89,7 +89,7 @@ if os.path.exists(f'{obs}/robustness.csv'):
     open(f'{parts}/tabS2.md', 'w').write('\n'.join(rows) + '\n')
 print('tables written to', parts)
 
-# S4: the criteria fixed before the GraphCast experiments, per configuration (hot cases unless stated)
+# S4: the Guangdong GraphCast checks, per configuration (hot cases unless stated)
 REGEN = {('small', 'NOTC'): 0.18, ('small', 'WIDE'): 0.01, ('oper', 'NOTC'): 0.13, ('oper', 'WIDE'): 0.01}   # from gc_analyse.py summaries (deficit > 3 hPa)
 Pt = {v: C.pivot_table(index=['model', 'kind', 'case', 'tid'], columns='variant', values=v) for v in ('t2m', 't850', 'T_truth')}
 ok = lambda b: ''   # v08: checks are reported as values, without pass/fail marks

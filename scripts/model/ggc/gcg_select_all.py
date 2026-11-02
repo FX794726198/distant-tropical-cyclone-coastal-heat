@@ -1,13 +1,13 @@
-"""ANALYSIS A2 (all exposure days; design analysis plan A2 (internal, written before the runs), frozen 2026-10-31 before any A2 run).
-Copy of the frozen A selection gcg_select.py (md5 56cb4195ffe75f2e4c42cc7943b05955) with one change in the choice of days and
+"""Second set of the GraphCast storm removal (analysis A2, all usable exposure days; Supplementary Section S3).
+Copy of the first-set selection gcg_select.py with one change in the choice of days and
 nothing else: instead of the 4 warmest / 3 coolest usable days, a region takes ALL its usable days of 2016-2021, at most
 --per-storm (2) per storm; when a storm has more usable days in a region, that many are drawn at random (numpy
 default_rng(--seed 20261031), regions in map order, storms in sorted SID order).  Case numbers start at --case0 (300).
 Candidate days, storm, V and the usable rules are unchanged.
 
 Original docstring:
-Global storm-removal test (analysis A, frozen 2026-10-30): choose the GraphCast cases for every region of the global map.
-Design and reading rules: analysis plan A (internal, written before the runs).  Rules in this docstring were fixed before any case was run.
+Storm removal in GraphCast on the coasts of the global map, first set of days (analysis A; Supplementary Section S3):
+choose the GraphCast cases for every region of the global map.
 
 Regions: the 23 warm and 18 cool regions of gl_regions.csv (gl_map.regions clusters, rebuilt here as in gl_stage2.region_keys).
 Candidate days: local days of YEARS (default 2016-2021) in which at least half of the region's cells are in their storm

@@ -98,7 +98,7 @@ other clusters. `WPS_ENV` and `WPS_GEOG` point to the WRF/WPS environment script
    selection (`gcg_select_all.py`), ERA5 staging, runs (`gcg_run_all.slurm`), readings (`gcg_eval_all.py`), grid points by
    distance from the coast (`ggc_cells.py`). The storm removal is in `scripts/model/graphcast/` and `scripts/rev/rev_build.py`.
 3. **WRF on six coasts (Fig. 2b–d, Fig. 3f, Tables S11, S12).** `scripts/model/wrfnc/RUN.md`: `wrfnc_select.py`
-   (cases fixed from the observed map before any run), `geo.slurm`, `prep_case.slurm` (ERA5, WPS and the edited met_em
+   (cases chosen from the observed map anomaly only), `geo.slurm`, `prep_case.slurm` (ERA5, WPS and the edited met_em
    files), `run_one.slurm`, `wrfnc_analyse.slurm`, `wrfnc_newlows.slurm`; then `wrf_ctl_check.py` (ARCO-ERA5 and ISD-Lite,
    any machine with internet access) and `wrf_ctl_table.py`.
 4. **Outer winds and coast orientation (Fig. 3, Fig. S13).** `scripts/model/mech/RUN.md`: `coast_normals.py` (Natural
@@ -113,9 +113,12 @@ other clusters. `WPS_ENV` and `WPS_GEOG` point to the WRF/WPS environment script
    `scripts/12_isd_hourly.py`, `scripts/10_obs_gd_v2.py`, `scripts/model/graphcast/` (`gc_stage.py`, `gc_build.py`,
    `gc_run.py`, `gc_analyse.py`), `scripts/model/wrf/`, the checks in `scripts/rev/` and the exports in `scripts/export/`.
 
-The case selections and the readings of the GraphCast tests on the coasts were written before their runs; the docstrings
-of the selection scripts record the rules. The link between the outer winds and the sign of the effect was found while
-examining the outputs of step 4.
+The selection scripts record in their docstrings the rules by which the model cases were chosen; the WRF cases use only the
+observed map anomaly. The link between the outer winds and the sign of the effect was found while examining the outputs
+of step 4. Internal labels in the scripts: analysis A is the first set of GraphCast days (the hottest days of each region),
+A2 the second set (all usable days), A3 the impact analysis and A4 the outer-wind analysis. Comments and printed
+summaries of some scripts were edited for release; the computations are those of the runs, so an MD5 sum printed in a
+stored output can differ from that of the released script.
 
 ## Notes on precision
 

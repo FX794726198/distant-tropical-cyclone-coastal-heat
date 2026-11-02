@@ -1,5 +1,5 @@
 #!/bin/bash
-# Analysis A2 (design analysis plan A2 (internal, written before the runs)): select all usable exposure days 2016-2021, <= 2 per storm.
+# Analysis A2 (second set of days): select all usable exposure days 2016-2021, <= 2 per storm.
 # usage: bash ggc_all_setup.sh SRC_DIR   (SRC_DIR = folder with the A2 scripts copied from the local archive, e.g. /scratch/$USER/tcheat/ggc_src)
 # Creates /scratch/$USER/tcheat/ggc_all beside ggc: run scripts copied from ggc/scripts (md5-checked against analysis A),
 # gc and era5 symlinked to ggc's, selection written to ggc_all/inputs.  Does NOT start the ERA5 staging (gcg_stage_all.sh).

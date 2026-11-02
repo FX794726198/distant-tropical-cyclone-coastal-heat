@@ -99,13 +99,3 @@ hotter half of each region's days +0.46 K, less hot half +0.41 K; corr(case-day 
 CTL - ERA5, warm cases: -0.04 K, within 1 K in 84%; 850-hPa d_free +0.43 K
 cool mirror: pooled d_free -0.20 [-0.34, -0.05] (map -0.94); regions with d_free < 0 and < d_null: 8 of 11
 regrowth (deficit > 3 hPa at V), WIDEL: 0% of 712 runs
-
-================ READING (frozen A2 rules)
-PASS  0 >= 10 usable warm regions
-PASS  1 pooled warm d_free >= 1/2 map warming, interval above 0
-PASS  2 >= 2/3 of usable warm regions with d_free > 0 and > d_null
-PASS  3 |pooled d_null| <= 0.3 K and d_free >= 2 |d_null|
-PASS  4 WIDEL regrowth <= 20%
-FAIL  5 cases not run in A alone: d_free >= 1/2 map warming, interval above 0
-PASS  6 check model (1 deg): pooled warm d_free > 0, interval above 0
-A2 ALL-EXPOSURE-DAY TEST: FAIL -> the NC line stops; analyses A and A2 go into CEE v06

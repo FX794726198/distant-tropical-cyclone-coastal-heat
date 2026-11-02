@@ -1,5 +1,5 @@
 """Global TC-heat map, step 2 (compute node): where do land days warm when a tropical cyclone sits 300-1300 km away?
-Pre-registered design: paper/全球图_分析方案_预注册.md (2026-10-29).
+Design and checks: Supplementary Section S1.
 
 Anomalies: harmonic seasonal cycle + linear trend removed per cell; then, inside the cell's TC season, each year's mean
 over reference days (no TC within 1300 km) is removed (interannual background, e.g. ENSO) and so is the +-15-day
@@ -319,7 +319,7 @@ def main():
                     regions(res[valid], 'ex_worst', 'sig_worst', -1, len(lon), len(lat))], ignore_index=True)
     RG.to_csv(os.path.join(OUT, 'gl_regions.csv'), index=False)
 
-    # Guangdong check (pre-registered a): TC to the E or SE
+    # Guangdong check (question a of Supplementary Section S1): TC to the E or SE
     gd = valid & res.lon.between(110, 117).values & res.lat.between(21, 25).values
     S, N = year_sums(B, seas_d & ((code == 2) | (code == 3)), yidx, ny)
     e_g, _, _, p_g = boot_mean(S, N, W)
@@ -333,7 +333,7 @@ def main():
              '', 'PLACEBO (tracks shifted by k years):', PL.round(4).to_string(index=False),
              f"(b) placebo/real: frac_sig_any {pl.frac_sig_any.mean() / max(PL.frac_sig_any[0], 1e-9):.2f}, "
              f"frac_sig_best {pl.frac_sig_best.mean() / max(PL.frac_sig_best[0], 1e-9):.2f}, "
-             f"hotspot cells {pl.frac_best_ge05_sig.mean() / max(PL.frac_best_ge05_sig[0], 1e-9):.2f} (pre-registered: <= 0.20)",
+             f"hotspot cells {pl.frac_best_ge05_sig.mean() / max(PL.frac_best_ge05_sig[0], 1e-9):.2f}",
              '', f'(a) Guangdong cells (110-117E, 21-25N): {int(gd.sum())}; TC to E or SE: excess mean {np.nanmean(e_g[gd]):+.2f} K, '
              f'positive {int((e_g[gd] > 0).sum())}, positive with p<0.05 {int(((p_g < 0.05) & (e_g > 0))[gd].sum())}',
              res[gd][['lon', 'lat', 'n_exp', 'ex_any', 'ex_E', 'ex_SE', 'ex_SW', 'sec_best', 'ex_best', 'hot_ratio']].round(2).to_string(index=False),
