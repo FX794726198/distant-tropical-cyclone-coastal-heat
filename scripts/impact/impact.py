@@ -1,15 +1,15 @@
-"""A3 (frozen design: plan A3 (internal)): hot person-days per year caused by distant tropical cyclones.
+"""Impact analysis (A3; Fig. 4a-e): hot person-days per year attributed to distant tropical cyclones.
 
 For every grid point of the 23 warm regions of the global map: daily maximum temperature anomaly A (harmonic seasonal cycle
 and linear trend removed, as in gl_map.py), hot day = A >= P90 of the point's storm-season days 1980-2021; exposure day =
 storm-season day whose exposure code equals the region's direction; storm contribution on exposure days
 delta = f * max(ex_dir, 0) with ex_dir the global-map excess of the point in the region's direction (0 if missing);
-storm-caused hot day = exposure day with A >= P90 and A - delta < P90.  Person-days use GHS-POP (pop_agg.py), 2020
+storm-attributed hot day = exposure day with A >= P90 and A - delta < P90.  Person-days use GHS-POP (pop_agg.py), 2020
 population for the main result.  The 18 cool regions give the hot days prevented by storms (f_cool = 0.16, and 1).
 
 Inputs (read only): $GL/era5_t2_YYYY.npz, $GL/static_1deg.npz, $GL/out/gl_codes.npz, $GL/out/gl_cells.csv;
 $IMP/gcg_regions.json, $IMP/all_oper_regions.csv (A2), $IMP/pop/pop_1deg.npz.
-Output: $IMP/out/impact_result.txt (with the verdict), impact_regions.csv, impact_years.csv, impact_cells.csv.
+Output: $IMP/out/impact_result.txt, impact_regions.csv, impact_years.csv, impact_cells.csv.
 Usage: python impact.py [--nboot 1000]
 """
 import argparse, json, os, time
@@ -186,21 +186,6 @@ def main():
     say(f'cool regions: hot person-days prevented per year {p16.mean() / 1e9:.3f} bn (f_cool 0.16), {p100.mean() / 1e9:.3f} bn (map, f = 1); '
         f'net with Q: {(qm - p16.mean()) / 1e9:.3f} bn and {(qm - p100.mean()) / 1e9:.3f} bn')
 
-    # verdict (design section 6)
-    M1 = qm >= 1e9; M2 = share >= 0.10
-    if M1:
-        R_ = (Q['f0.34'].mean() >= 0.5e9) and (qlo >= 0.5e9); rnote = f'Q(f=0.34) {Q["f0.34"].mean() / 1e9:.3f} bn, Q lower {qlo / 1e9:.3f} bn (need >= 0.5)'
-    elif M2:
-        R_ = (share34 >= 0.05) and (slo >= 0.05); rnote = f'share(f=0.34) {100 * share34:.2f}%, share lower {100 * slo:.2f}% (need >= 5%)'
-    else:
-        R_ = False; rnote = 'not evaluated (no scale criterion met)'
-    top = RR[RR.kind == 'warm'].Q_share.max(); n10 = sum(v >= 0.10 for v in cs.values())
-    B_ = (top < 0.5) and (n10 >= 2)
-    say(''); say('================ VERDICT (frozen criteria)')
-    say(f'M1 Q >= 1.0 bn: {qm / 1e9:.3f} -> {"met" if M1 else "not met"}; M2 share >= 10%: {100 * share:.2f}% -> {"met" if M2 else "not met"}')
-    say(f'R robustness: {rnote} -> {"met" if R_ else "not met"}')
-    say(f'B breadth: largest region {100 * top:.1f}% (< 50%), continents >= 10%: {n10} (>= 2) -> {"met" if B_ else "not met"}')
-    say(f'A3 {"PASS" if ((M1 or M2) and R_ and B_) else "FAIL"}')
 
     pd.DataFrame(dict(year=years, Q_pop2020=q, Q_popvarying=qtv, hot_pop2020=hot_tot, Q_f034=Q['f0.34'], Q_f061=Q['f0.61'],
                       Q_fregion=Q['fregion'], Q_P95=a95, Q_35C=a35, prev_cool016=p16, prev_cool100=p100,

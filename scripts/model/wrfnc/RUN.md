@@ -1,4 +1,4 @@
-# Multi-coast WRF storm-removal runs (NC upgrade, started 2026-11-01): how to run on DelftBlue
+# WRF storm-removal runs on six coasts: how to run on DelftBlue
 
 Goal: repeat the Guangdong WRF experiment on four more coasts with the same model set-up, and with the same edit as
 the GraphCast all-exposure-day test (WIDEL), on the same days, so WRF and GraphCast can be compared case by case.

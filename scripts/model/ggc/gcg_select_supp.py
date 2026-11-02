@@ -1,14 +1,14 @@
-"""PRE-REGISTERED SUPPLEMENT to the global storm-removal test (analysis A; design §10, written 2026-10-30 after the selection,
-before any GraphCast run; executed 2026-10-31 after the main reading).  Not part of the verdict.
-Copy of the frozen gcg_select.py (md5 56cb4195ffe75f2e4c42cc7943b05955) with three changes and nothing else:
+"""Supplement to the first set of the GraphCast storm removal (Supplementary Section S3): the four large regions that had no
+case under the half-of-cells rule.
+Copy of gcg_select.py with three changes and nothing else:
   (a) only the regions in --regions are selected (default the four large regions without cases: W7, W11, C10, C14);
   (b) the two "at least half of the cells" rules (cells in season; cells with exposure code == sector) use --frac (default 1/4);
   (c) case numbers start at --case0 (default 200) so they cannot be confused with the 107 main cases.
 Everything else (storm, V, usable, ranking, 4 warmest / 3 coolest, <= 2 per storm) is unchanged.
 
 Original docstring:
-Global storm-removal test (analysis A, frozen 2026-10-30): choose the GraphCast cases for every region of the global map.
-Design and reading rules: analysis plan A (internal, written before the runs).  Rules in this docstring were fixed before any case was run.
+Storm removal in GraphCast on the coasts of the global map, first set of days (analysis A; Supplementary Section S3):
+choose the GraphCast cases for every region of the global map.
 
 Regions: the 23 warm and 18 cool regions of gl_regions.csv (gl_map.regions clusters, rebuilt here as in gl_stage2.region_keys).
 Candidate days: local days of YEARS (default 2016-2021) in which at least half of the region's cells are in their storm

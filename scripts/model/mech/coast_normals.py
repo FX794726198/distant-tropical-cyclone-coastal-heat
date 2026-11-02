@@ -1,4 +1,4 @@
-"""A4: a seaward unit vector for every region of the global map (plan plan A4 (internal), section 3).
+"""A4: a seaward unit vector for every region of the global map.
 Natural Earth 1:50m land polygons -> 0.25-degree land mask -> Gaussian smoothing (sigma 1 degree) -> minus the gradient
 (per km) at the region's 1-degree grid points, summed and normalised.  Onshore wind = -(u, v) . n (positive from sea to land).
 Usage: python coast_normals.py LAND_SHP gcg_regions.json OUT.csv"""

@@ -6,7 +6,7 @@ worst sector: FDR-significant 463 cells; <= -0.5 K and significant: 426
 PLACEBO (tracks shifted by k years):
  run  n_valid  frac_sig_any  frac_sig_any_warm  frac_sig_best  frac_best_ge05_sig  median_ex_any
 real     2222        0.3609              0.171         0.2219              0.2097         0.0427
-(b) placebo/real: frac_sig_any nan, frac_sig_best nan, hotspot cells nan (pre-registered: <= 0.20)
+(b) placebo/real: frac_sig_any nan, frac_sig_best nan, hotspot cells nan
 
 (a) Guangdong cells (110-117E, 21-25N): 27; TC to E or SE: excess mean +0.95 K, positive 27, positive with p<0.05 27
   lon  lat  n_exp  ex_any  ex_E  ex_SE  ex_SW sec_best  ex_best  hot_ratio

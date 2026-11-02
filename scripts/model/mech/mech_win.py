@@ -1,4 +1,4 @@
-"""A4 window fields from the A2 case files (exploratory plan plan A4 (internal), section 4: composites).
+"""A4 window fields from the A2 case files (exploratory composites).
 
 For every case: CTL minus WIDEL and CTL itself at V (14 local time), mean over the leads present, for the window fields
 t2m, t850, w500, msl, u10, v10 (wlat x wlon around the region).  The 0.25-degree model ('oper') is also block-averaged to

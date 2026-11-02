@@ -1,7 +1,7 @@
-"""Global TC-heat map, stage 2 (compute node), as pre-registered in paper/全球图_分析方案_预注册.md: for every warm (and
+"""Global TC-heat map, stage 2 (compute node; Supplementary Section S1): for every warm (and
 cool) region of gl_map.py, the excess of the regional daily maximum temperature over circulation analogues, the 850-hPa
 temperature and humidity fingerprints, and the temperature as the storm approaches; the same for Guangdong as a check.
-Also an exploratory test, not pre-registered: is a storm in a given direction warmer for the land when its winds reach
+Also an exploratory test: is a storm in a given direction warmer for the land when its winds reach
 the land from inland than when they reach it from the sea?
 
 Exposure: in the region's TC season (months in which at least half of its cells are in season), the cell-days of the

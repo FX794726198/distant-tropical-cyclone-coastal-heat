@@ -1,5 +1,5 @@
 """A4 exploration of the GraphCast mechanism outputs (mech_gc.py, mech_win.py), run locally on the copies in mech_out/gc/.
-Exploratory: tables, groupings and composites, no verdict (plan plan A4 (internal), section 4).
+Exploratory: tables, groupings and composites.
 
 1. Region fingerprint table (both models) with latitude, ERA5 dry/moist class, ISD station count and A2 map warming.
 2. Case-level relations of the 2-m effect with the mechanism terms, within regions (region means removed), pooled and by

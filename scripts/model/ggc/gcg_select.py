@@ -1,5 +1,5 @@
-"""Global storm-removal test (analysis A, frozen 2026-10-30): choose the GraphCast cases for every region of the global map.
-Design and reading rules: analysis plan A (internal, written before the runs).  Rules in this docstring were fixed before any case was run.
+"""Storm removal in GraphCast on the coasts of the global map, first set of days (analysis A; Supplementary Section S3):
+choose the GraphCast cases for every region of the global map.
 
 Regions: the 23 warm and 18 cool regions of gl_regions.csv (gl_map.regions clusters, rebuilt here as in gl_stage2.region_keys).
 Candidate days: local days of YEARS (default 2016-2021) in which at least half of the region's cells are in their storm

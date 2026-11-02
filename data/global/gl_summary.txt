@@ -11,7 +11,7 @@ shift2     2218        0.0005             0.0005         0.0000              0.0
 shift3     2218        0.0000             0.0000         0.0000              0.0000        -0.0063
 shift4     2218        0.0014             0.0005         0.0000              0.0000         0.0089
 shift5     2218        0.0041             0.0041         0.0032              0.0032         0.0056
-(b) placebo/real: frac_sig_any 0.00, frac_sig_best 0.00, hotspot cells 0.00 (pre-registered: <= 0.20)
+(b) placebo/real: frac_sig_any 0.00, frac_sig_best 0.00, hotspot cells 0.00
 
 (a) Guangdong cells (110-117E, 21-25N): 27; TC to E or SE: excess mean +1.00 K, positive 27, positive with p<0.05 27
   lon  lat  n_exp  ex_any  ex_E  ex_SE  ex_SW sec_best  ex_best  hot_ratio

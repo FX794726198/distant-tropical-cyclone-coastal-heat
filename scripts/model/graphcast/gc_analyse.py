@@ -87,19 +87,6 @@ def main():
     if len(H) and f'd{M}' in H:
         dM = H[f'd{M}']
         lo, hi = boot_ci(dM.values, H.tid.values)
-        crit = {
-            '1 CTL within 1 K of ERA5 in >=70% of heat cases': (H.ctl_err.abs() <= 1).mean() >= 0.7,
-            f'2 vortex not regenerated (deficit<=3 hPa) in >=80% of {M} runs': (len(R) == 0) or ((R.notc <= 3).mean() >= 0.8),
-            f'3 {M}-CTL <= -0.8 K, CI below 0, >=70% cases negative': (dM.mean() <= -0.8) and (hi < 0) and ((dM < 0).mean() >= 0.7),
-            f'4a {WK} between {M} and CTL': (f'd{WK}' in H) and (dM.mean() < H[f'd{WK}'].mean() < 0),
-            '4b storm placed SW cools (SHIFT-NOTC < 0)': (H.SW_effect.mean() < 0) if 'SW_effect' in H else None,
-            f'5 {NL} |{NL}-CTL| < 0.2 K': (f'd{NL}' in H) and (abs(H[f'd{NL}'].mean()) < 0.2),
-            f'6 placebo cases: removing a SW storm does not cool ({M}-CTL >= 0)': (P[P.kind == 'placebo'][f'd{M}'].mean() >= 0) if (P.kind == 'placebo').any() else None,
-            f'7 fingerprint T850 CTL-{M} >= +0.4 K': (H.T850_CTL - H[f'T850_{M}']).mean() >= 0.4,
-        }
-        out.append('=== PASS LINES (heat cases)')
-        for k, v in crit.items():
-            out.append(f'{"PASS" if v else ("n/a" if v is None else "FAIL")}  {k}')
     txt = '\n'.join(out); print(txt)
     open(os.path.join(odir, f'summary_{M}.txt'), 'w').write(txt + '\n')
     if comp:

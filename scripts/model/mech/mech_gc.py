@@ -1,4 +1,4 @@
-"""A4 GraphCast mechanism per region (exploratory plan plan A4 (internal), section 4), from the A2 case files.
+"""A4 GraphCast mechanism per region (exploratory), from the A2 case files.
 
 Per case: CTL minus WIDEL at V (14 local time), mean over the region's grid points and the leads present, for t2m, t850,
 q850, w500 and w850 (Pa/s, positive = more sinking with the storm), z500, msl, tp6, the onshore 10-m wind -(du, dv).n and
@@ -7,7 +7,7 @@ the alongshore wind (du, dv).(-ny, nx) with the region's seaward unit vector n (
 for each lead (t2m_L24, t2m_L36, t2m_L48).  Region value: mean over storms of each storm's case mean; 95% interval from
 resampling storms (2000, seed 7, regions in the fixed order W1..W23, C1..C18).  Pooled values (equal weight per region,
 storms resampled within regions) for several groups of regions; correlations and a regression of the 2-m effect on the
-mechanism terms across regions and cases.  Exploratory, no verdict (design section 4).
+mechanism terms across regions and cases.  Exploratory.
 
 Usage: python mech_gc.py CASEDIR_OPER CASEDIR_SMALL A2_REGIONS_CSV COAST_NORMALS_CSV OUTDIR [MECH_ERA5_CSV]
 (A2_REGIONS_CSV = all_oper_regions.csv of A2, with columns region, kind, usable, consistent, d_free; all_{model}_cases.csv
@@ -116,7 +116,7 @@ for model, d in (('oper', DOPER), ('small', DSMALL)):
         say(''); say('background with the storm present (CTL) and ERA5 2-m temperature:')
         say(T[BG].round(3).to_string())
 
-# ---------------------------------------------------------------- exploration (no verdict; design A4 section 4)
+# ---------------------------------------------------------------- exploration
 CL = pd.read_csv(ERA).set_index('region') if ERA and os.path.exists(ERA) else None
 for model in ('oper', 'small'):
     C, T, cons, sm = res[model]

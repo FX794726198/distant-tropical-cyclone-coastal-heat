@@ -1,5 +1,5 @@
 #!/bin/bash
-# Pre-registered supplement (design §10): select the cases of the four large regions with the quarter-of-cells rule.
+# Supplement to the first set: select the cases of the four large regions with the quarter-of-cells rule.
 # usage: bash ggc_supp_setup.sh SRC_DIR   (SRC_DIR = the ggc folder copied from the local archive, e.g. /scratch/$USER/tcheat/ggc_src)
 # Creates /scratch/$USER/tcheat/ggc_supp beside ggc: scripts copied from ggc/scripts (already md5-checked), gc and era5
 # symlinked to ggc's, selection written to ggc_supp/inputs.  Does NOT start the ERA5 staging (see gcg_stage_supp.sh).

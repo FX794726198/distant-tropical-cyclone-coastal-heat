@@ -1,4 +1,4 @@
-"""Forecast check (NC upgrade, exploratory, 2026-11-01): do weather forecasts see the coastal heat of distant storms,
+"""Forecast check (exploratory): do weather forecasts see the coastal heat of distant storms,
 and how many days ahead?
 
 Same definitions as the global map (gl_map.py) and the station check, on the 1.5-degree WeatherBench2 grid:
