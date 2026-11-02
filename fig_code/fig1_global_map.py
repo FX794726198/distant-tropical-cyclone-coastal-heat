@@ -72,7 +72,7 @@ def draw_map(ax, ex, sig, tag):
 
 # a: warmest storm direction, numbered warm regions
 axa = fig.add_axes(box(4.5, H - 3.0 - MH, MW, MH), projection=proj)
-draw_map(axa, q('ex_best'), z['sig_best'], 'Storm in the warmest direction')
+draw_map(axa, q('ex_best'), z['sig_best'], 'TC in the warmest direction')
 for k, r in W_.iterrows():
     lx, ly = NAMES[k][1]
     axa.plot([r.lon, lx], [r.lat, ly], color='k', lw=0.35, transform=pc, zorder=6)
@@ -103,17 +103,17 @@ axc.text(62, 2.5, 'Tracks shifted by 1–5 yr', color='#555555', fontsize=6.5, h
 
 # b: coolest storm direction
 axb = fig.add_axes(box(4.5, H - 3.0 - 2 * MH - 2.0, MW, MH), projection=proj)
-draw_map(axb, q('ex_worst'), z['sig_worst'], 'Storm in the coolest direction')
+draw_map(axb, q('ex_worst'), z['sig_worst'], 'TC in the coolest direction')
 # shared colour bar and grey keys in the empty southern Indian Ocean of b
 q0 = axb.transData.transform(proj.transform_point(57, -13, pc)); q1 = axb.transData.transform(proj.transform_point(103, -13, pc))
 (cx0, cy0), (cx1, _) = inv.transform(q0), inv.transform(q1)
 cax = fig.add_axes([cx0, cy0, cx1 - cx0, 1.6 / H])
 cb = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, orientation='horizontal', extend='both', ticks=bounds[::2])
-cb.set_label('Tmax on storm days minus\nmatched storm-free days (K)', fontsize=6.5, labelpad=1, linespacing=0.95)
+cb.set_label('Tmax on TC days minus\nmatched TC-free days (K)', fontsize=6.5, labelpad=1, linespacing=0.95)
 cb.ax.tick_params(labelsize=6.5, length=1.5, pad=1); cb.outline.set_linewidth(0.4)
 cb.ax.set_xticklabels(['−2.5', '−1.5', '−0.5', '0.5', '1.5', '2.5'])
 k0 = inv.transform(axb.transData.transform(proj.transform_point(66, -34, pc)))
-for i, (c, lab) in enumerate(((NS, 'Not significant'), (NOEXP, 'Few storm days'))):
+for i, (c, lab) in enumerate(((NS, 'Not significant'), (NOEXP, 'Few TC days'))):
     fig.patches.append(Rectangle((k0[0], k0[1] + (1 - i) * 2.6 / H), 2.2 / W, 1.6 / H, transform=fig.transFigure, facecolor=c,
                                  edgecolor='#888888', lw=0.3, zorder=9))
     fig.text(k0[0] + 3.0 / W, k0[1] + (1 - i) * 2.6 / H + 0.8 / H, lab, fontsize=6.5, va='center', ha='left', zorder=9)

@@ -26,9 +26,9 @@ def disc(base, bounds, lo_=0.06, hi_=0.94):
 W = 180; MW = 55.0; MH = MW * (EXT[3] - EXT[2]) / (EXT[1] - EXT[0]); H = MH + 24.5
 fig = plt.figure(figsize=(W * MM, H * MM))
 box = lambda x0, y0, w, h: [x0 / W, y0 / H, w / W, h / H]
-PAN = [('oper|heat|WIDE|msl|mean', 'PuOr', np.arange(-6, 0.01, 1.0), 'Sea-level pressure, with storm\nminus storm removed (hPa)'),
-       ('oper|heat|WIDE|tp6|mean', 'BrBG', np.array([-2, -1, -0.5, -0.25, 0.25, 0.5, 1, 2]), 'Rainfall in the 6 h before 14 LT, with\nstorm minus storm removed (mm)'),
-       ('oper|heat|WIDE|t850|mean', 'RdBu_r', np.arange(-2.5, 2.51, 0.5), '850-hPa temperature, with storm minus\nstorm removed (K); green: humidity (±0.5,\n1, 2 g kg$^{-1}$; dashed: drier)')]
+PAN = [('oper|heat|WIDE|msl|mean', 'PuOr', np.arange(-6, 0.01, 1.0), 'Sea-level pressure, with TC\nminus TC removed (hPa)'),
+       ('oper|heat|WIDE|tp6|mean', 'BrBG', np.array([-2, -1, -0.5, -0.25, 0.25, 0.5, 1, 2]), 'Rainfall in the 6 h before 14 LT, with\nstorm minus TC removed (mm)'),
+       ('oper|heat|WIDE|t850|mean', 'RdBu_r', np.arange(-2.5, 2.51, 0.5), '850-hPa temperature, with TC minus\nstorm removed (K); green: humidity (±0.5,\n1, 2 g kg$^{-1}$; dashed: drier)')]
 for n, (k, cmn, bnd, lab) in enumerate(PAN):
     x0 = 6.5 + n * (MW + 5.5)
     ax = fig.add_axes(box(x0, H - 4.5 - MH, MW, MH), projection=pc)

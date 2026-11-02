@@ -53,7 +53,7 @@ for key, mx, col in (('free', PA['oper']['map'], RED), ('cool', PA['oper']['cool
     AXB.errorbar(mx, m, yerr=[[m - lo], [hi - m]], fmt='D', ms=4.6, mfc='k', mec='k', ecolor='k', elinewidth=0.9, capsize=1.6,
                  capthick=0.8, zorder=6)
 AXB.set_xlim(-1.9, 2.1); AXB.set_ylim(-1.5, 2.1); AXB.set_xticks([-1, 0, 1, 2]); AXB.set_yticks([-1, 0, 1, 2])
-AXB.set_xlabel('Warming in the map (K)', labelpad=1); AXB.set_ylabel('Effect of the storm (K)', labelpad=1)
+AXB.set_xlabel('Warming in the map (K)', labelpad=1); AXB.set_ylabel('Effect of the TC (K)', labelpad=1)
 for s_ in ('top', 'right'):
     AXB.spines[s_].set_visible(False)
 AXB.text(1.42, 1.95, '1:1', fontsize=6.0, color='#7A7A7A', ha='right', va='center')
@@ -108,7 +108,7 @@ for mdl, off, fill in (('oper', -0.12, True), ('small', 0.12, False)):
 AXD.axhline(0, color='#555555', lw=0.5, zorder=1)
 AXD.set_xticks(xe); AXD.set_xticklabels(['0–\n50', '50–\n150', '150–\n300', '>\n300'], fontsize=6.2, linespacing=0.95)
 AXD.set_xlim(-0.5, 3.5); AXD.set_ylim(-1.0, 1.1); AXD.tick_params(axis='x', length=0, pad=2)
-AXD.set_xlabel('Distance from coast (km)', labelpad=1); AXD.set_ylabel('Effect of the storm (K)', labelpad=1)
+AXD.set_xlabel('Distance from coast (km)', labelpad=1); AXD.set_ylabel('Effect of the TC (K)', labelpad=1)
 for s_ in ('top', 'right'):
     AXD.spines[s_].set_visible(False)
 AXD.text(0.03, 0.99, 'warm', transform=AXD.transAxes, fontsize=6.2, color=RED, ha='left', va='top')

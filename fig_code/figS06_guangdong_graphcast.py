@@ -1,4 +1,4 @@
-"""Fig. 3: removing the storm from GraphCast initial states (input: gc_export.py output dir GCX, case and track tables)."""
+"""Fig. 3: removing the TC from GraphCast initial states (input: gc_export.py output dir GCX, case and track tables)."""
 import os, sys
 import numpy as np, pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -68,7 +68,7 @@ for j, kind in enumerate(('heat', 'placebo')):
     fig.text((1 + 82.5 * j) / W, 1 - 2.5 / H, 'ab'[j], fontsize=9, fontweight='bold', va='top', ha='left')
 cax = fig.add_axes(box(162.5, H - 3.5 - MH + 3, 2.2, MH - 6))
 cb = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, extend='both', ticks=bounds[::2])
-cb.set_label('Temperature with storm minus\nwithout storm, 14 LT (K)', fontsize=7, labelpad=2); cb.ax.tick_params(labelsize=7, length=2)
+cb.set_label('Temperature with TC minus\nwithout TC, 14 LT (K)', fontsize=7, labelpad=2); cb.ax.tick_params(labelsize=7, length=2)
 cb.outline.set_linewidth(0.4)
 
 # c: per-case effects for each removal definition and model; filled, storm east on hot days; open, storm southwest
@@ -109,12 +109,12 @@ axc.axhline(0, color='#555555', lw=0.5, zorder=1)
 axc.set_xticks(xt); axc.set_xticklabels(xl, fontsize=6.5, linespacing=0.95)
 axc.tick_params(axis='x', length=0, pad=2)
 axc.set_xlim(-0.6, x - 0.9)
-axc.set_ylabel('Effect of the storm on\n14 LT temperature (K)')
+axc.set_ylabel('Effect of the TC on\n14 LT temperature (K)')
 S = pd.DataFrame(summ)
 ylo, yhi = axc.get_ylim(); axc.set_ylim(ylo - 0.13 * (yhi - ylo), yhi + 0.06 * (yhi - ylo))
-h = [Line2D([], [], ls='none', marker='o', ms=3.4, mfc='#7F7F7F', mec='none', label='Storm east, hot days'),
-     Line2D([], [], ls='none', marker='o', ms=3.4, mfc='white', mec='#7F7F7F', label='Storm southwest'),
-     Line2D([], [], ls='none', marker='o', ms=3.4, mfc=GREY, mec='none', alpha=0.7, label='Same edit, no storm')]
+h = [Line2D([], [], ls='none', marker='o', ms=3.4, mfc='#7F7F7F', mec='none', label='TC east, hot days'),
+     Line2D([], [], ls='none', marker='o', ms=3.4, mfc='white', mec='#7F7F7F', label='TC southwest'),
+     Line2D([], [], ls='none', marker='o', ms=3.4, mfc=GREY, mec='none', alpha=0.7, label='Same edit, no TC')]
 axc.legend(handles=h, loc='lower left', ncol=3, frameon=False, handletextpad=0.1, columnspacing=0.9, borderaxespad=0.1)
 fig.text(1 / W, 51.5 / H, 'c', fontsize=9, fontweight='bold', va='top', ha='left')
 
@@ -138,10 +138,10 @@ for i, (m, v, nv, hv, ck, lab) in enumerate(CONF):
 axd.axhline(0, color='#555555', lw=0.5, zorder=1)
 axd.set_xticks([0, 0.5, 1.0]); axd.set_xticklabels(['0', '½', '1'])
 axd.set_xlim(-0.08, 1.16)
-axd.set_xlabel('Share of the storm removed')
-axd.set_ylabel('Effect of the storm (K)')
+axd.set_xlabel('Share of the TC removed')
+axd.set_ylabel('Effect of the TC (K)')
 hd, ld = axd.get_legend_handles_labels()
-hd.append(Line2D([], [], ls='none', marker='o', ms=3.2, mfc='white', mec='#7F7F7F')); ld.append('Same edit, no storm')
+hd.append(Line2D([], [], ls='none', marker='o', ms=3.2, mfc='white', mec='#7F7F7F')); ld.append('Same edit, no TC')
 axd.legend(hd, ld, loc='upper left', frameon=False, handlelength=1.2, borderaxespad=0.1, labelspacing=0.3)
 yl = axd.get_ylim(); axd.set_ylim(min(yl[0], -0.12), yl[1] + 0.25 * (yl[1] - yl[0]))   # room for the legend above the lines
 fig.text(117 / W, 51.5 / H, 'd', fontsize=9, fontweight='bold', va='top', ha='left')

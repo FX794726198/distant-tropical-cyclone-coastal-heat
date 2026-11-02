@@ -56,7 +56,7 @@ def region_means(d, cols):
 
 
 def pooled_ci(d, col, n=2000):
-    """region-equal mean and 95% interval from resampling storms within regions"""
+    """region-equal mean and 95% interval from resampling TCs within regions"""
     regs = {r: [g[col].values for _, g in q.groupby('sid')] for r, q in d.groupby('region')}
     m = np.mean([np.mean([s.mean() for s in v]) for v in regs.values()])
     bs = []
@@ -113,7 +113,7 @@ cax = fig.add_axes([cx0, cy0, cx1 - cx0, cy1 - cy0])
 cb = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, orientation='horizontal', extend='both', ticks=bounds[::2])
 cb.ax.tick_params(labelsize=6.5, length=2, pad=1); cb.outline.set_linewidth(0.4)
 cb.ax.set_xticklabels(['−2', '−1', '0', '1', '2'])
-cb.set_label('Storm days minus storm-free days (K)', fontsize=6.5, labelpad=1.5)
+cb.set_label('TC days minus TC-free days (K)', fontsize=6.5, labelpad=1.5)
 for la_, txt, col in ((-20.5, 'outer wind blows off the land', OFF), (-25, 'outer wind blows onto the land', ON)):
     kx, ky = at(-152, la_); kx2, _ = at(-145, la_)
     fig.add_artist(FancyArrowPatch((kx, ky), (kx2, ky), arrowstyle='-|>', mutation_scale=5.5, lw=0.9, color=col,
@@ -166,7 +166,7 @@ axc.axhline(0, color='#555555', lw=0.5, zorder=1); axc.axvline(0, ymin=0.22, col
 ql = Q[Q.band == 'low']
 corr_text(axc, [(f'<30°: $r$ = {ql.imp04.corr(ql.t2m):.2f}', 'k'), (f'all: $r$ = {Q.imp04.corr(Q.t2m):.2f}', '#555555')], 0.03, 0.19, 'left')
 xaxis_onshore(axc); axc.set_ylim(-1.15, 1.5); axc.set_yticks([-1, 0, 1])
-axc.set_ylabel('Effect of the storm, 2 m (K)', labelpad=1)
+axc.set_ylabel('Effect of the TC, 2 m (K)', labelpad=1)
 axc.set_title(f'GraphCast, {len(Q)} regions', fontsize=6.8, pad=2, loc='left')
 print('panel c regions', len(Q), 'corr low', round(ql.imp04.corr(ql.t2m), 2), 'all', round(Q.imp04.corr(Q.t2m), 2))
 
@@ -318,7 +318,7 @@ ax.set_xticklabels(['−1,000', '0', '1,000', '2,000']); ax.set_yticklabels(['�
 ax.tick_params(labelsize=6.3)
 ax.set_title(f'GraphCast, warm <30° ({nc[2]} regions)', loc='left', fontsize=6.5, pad=2)
 ax.set_ylabel('Across (km)', labelpad=0.5, fontsize=6.5)
-ax.set_xlabel('Towards the storm (km)', labelpad=1, fontsize=6.5)
+ax.set_xlabel('Towards the TC (km)', labelpad=1, fontsize=6.5)
 print('panel g n', nc, 'storm distance', round(d0), 'seaward', round(sx, 2), round(sy, 2))
 ax.quiverkey(qv, (GX + GW / 2 - 0.6) / W, (YB3 - 9.0) / H, 1.0, '1 m/s', labelpos='E', coordinates='figure',
              fontproperties={'size': 6.5}, labelsep=0.05)

@@ -1,4 +1,4 @@
-| No. | Region | Days (storms; new) | Map change (K) | Case-day anomaly (K) | Effect, 0.25° (K) | Effect, 1° (K) | Null edit (K) | Hottest or coolest days, 0.25° (K) | Sign of the map |
+| No. | Region | Days (TCs; new) | Map change (K) | Case-day anomaly (K) | Effect, 0.25° (K) | Effect, 1° (K) | Null edit (K) | Hottest or coolest days, 0.25° (K) | Sign of the map |
 |---|---|---|---|---|---|---|---|---|---|
 | Warm regions | | | | | | | | | |
 | 2 | Inland N Mozambique | 6 (4; 3) | +0.81 | +0.70 | +0.44 (0.00 to +0.94) | +0.17 | +0.01 | +0.52 | yes |

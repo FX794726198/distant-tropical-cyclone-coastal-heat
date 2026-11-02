@@ -76,7 +76,7 @@ EDGES = [0, 50, 150, 300, 1e9]; ELAB = ['0–50', '50–150', '150–300', '> 30
 
 
 def cell_bins(rng, model, kind, T, col='d_free', nboot=1000):
-    """storm-weighted effect by distance of the grid point from the coast, with an interval from resampling region-storm pairs"""
+    """TC-weighted effect by distance of the grid point from the coast, with an interval from resampling region-TC pairs"""
     D = pd.read_csv(f'{GGC}/all_cells_{model}.csv')
     D = D[(D.kind == kind) & D.region.isin(T[T.usable & (T.kind == kind)].index)].copy()
     D['w'] = 1.0 / D.groupby(['region', 'sid']).sid.transform('size')

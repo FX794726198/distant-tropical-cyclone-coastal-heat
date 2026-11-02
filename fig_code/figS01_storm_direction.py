@@ -54,7 +54,7 @@ def at(ax, lo_, la_):
 
 # a: direction of the warmest storm sector (significant warming only)
 axa = fig.add_axes(box(4.5, H - 3.0 - MH, MW, MH), projection=proj)
-base(axa, 'Direction of the storm on the warmest days')
+base(axa, 'Direction of the TC on the warmest days')
 eb, sec, sig = q('ex_best'), z['sec_best'].astype(float), z['sig_best']
 ok = np.isfinite(eb)
 axa.pcolormesh(lone, late, np.ma.masked_where(~(ok & ~((sig == 1) & (eb > 0))), np.ones_like(eb)).T, cmap=ListedColormap([NS]),
@@ -73,7 +73,7 @@ for k in range(8):
 
 # b: hot-day ratio
 axb = fig.add_axes(box(4.5, H - 3.0 - 2 * MH - 2.0, MW, MH), projection=proj)
-base(axb, 'Hottest 5% of days: share with a storm, observed over expected')
+base(axb, 'Hottest 5% of days: share with a TC, observed over expected')
 hr = q('hot_ratio')
 hb = np.array([0.5, 0.67, 0.8, 1.0, 1.25, 1.5, 2.0, 3.0])
 hc = plt.get_cmap('PuOr_r')(np.linspace(0.08, 0.92, len(hb) + 1))
@@ -103,7 +103,7 @@ if ons is not None:
         axc.plot(g.lag, g['mean'], color=BLUE, lw=1.0, ls=(0, (3, 1.5)), label='Guangdong grid points', zorder=3)
     axc.axhline(0, color='k', lw=0.4); axc.axvline(0, ymax=0.74, color=GREY, lw=0.5, ls='--')
     axc.set_ylim(-0.85, 1.75); axc.set_yticks([-0.5, 0, 0.5, 1.0])
-    axc.set_xticks(range(-5, 4)); axc.set_xlabel('Days since the storm came within 1,300 km', labelpad=1); axc.set_ylabel('Tmax anomaly (K)')
+    axc.set_xticks(range(-5, 4)); axc.set_xlabel('Days since the TC came within 1,300 km', labelpad=1); axc.set_ylabel('Tmax anomaly (K)')
     axc.legend(loc='upper left', frameon=False, fontsize=6.5, handlelength=1.6, borderaxespad=0.1, ncol=2, columnspacing=1.0)
     for sp in ('top', 'right'): axc.spines[sp].set_visible(False)
 
