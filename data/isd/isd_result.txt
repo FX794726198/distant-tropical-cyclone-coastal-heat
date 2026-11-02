@@ -1,0 +1,99 @@
+1984 stations with data, 3664 storms, 15341 days
+region station-days 118811 (868 stations, 38 regions); coastal station-days 957767 (1367 stations)
+
+== (1) regions: storm in the region sector, region season; stations vs ERA5 map (Tmax)
+38 regions with >= 10 exposure days at a station; usable (>= 20 storms): 37
+  low: 29 regions; station sign as on the map: Tmax 26/28, T_pm 28/29; corr(station Tmax, map) +0.84; mean station/map ratio (warm) 0.60
+    cool: n 14, Tmax -1.04 K (map -1.13), T_pm -1.05, Td_pm +0.48, onshore +0.07 m/s (negative in 7), slp -0.72 hPa
+    warm: n 15, Tmax +0.65 K (map +1.08), T_pm +0.82, Td_pm -0.23, onshore -0.77 m/s (negative in 13), slp -1.90 hPa
+  mid: 8 regions; station sign as on the map: Tmax 8/8, T_pm 8/8; corr(station Tmax, map) +0.93; mean station/map ratio (warm) 0.94
+    cool: n 2, Tmax -0.85 K (map -0.81), T_pm -0.98, Td_pm +1.57, onshore +0.54 m/s (negative in 0), slp -0.47 hPa
+    warm: n 6, Tmax +1.26 K (map +1.34), T_pm +1.24, Td_pm +1.25, onshore -0.30 m/s (negative in 4), slp -0.59 hPa
+  corr(station onshore change, implied outer wind): <30 +0.65, all +0.70; corr(station Tmax, implied): <30 -0.79
+region sign sector    lat  n_st  n_cells  n_storm  ex_map  Tmax  Tmax_lo  Tmax_hi  T_pm  Td_pm  on_pm  imp04
+   C10 cool      W -19.65    18       14      175   -2.07 -1.61    -2.06    -1.22 -1.77   2.22   1.27   0.81
+   C11 cool      S  16.00    15        6      108   -1.02 -1.12    -1.48    -0.79 -1.41  -0.21  -0.63   0.95
+   C12 cool     SW  34.67     1        1      165   -0.64 -1.02    -1.30    -0.74 -1.15   1.53   0.21   0.59
+   C13 cool     NW -18.08     8        7       91   -1.52 -1.55    -2.04    -0.97 -1.30   0.42   0.59   0.93
+   C14 cool      W  21.87    48       34      489   -0.98 -0.52    -0.64    -0.40 -0.74   0.62   0.19   0.54
+   C15 cool     SW  28.80     5        2       96   -0.99 -0.85    -1.46    -0.28 -0.93   1.70   0.32   0.98
+   C16 cool     SW  32.00    14        3      104   -0.98 -0.68    -1.10    -0.21 -0.80   1.62   0.87   1.00
+   C17 cool     SW  21.20     7        5       63   -0.63 -0.50    -0.74    -0.25 -0.55   0.71  -0.16   0.23
+   C18 cool      N  10.00     6        4       74   -0.69 -0.36    -0.63    -0.09 -0.43   0.33  -0.40  -0.30
+    C2 cool      W -18.49     3        3       73   -1.15   NaN      NaN      NaN -0.52   0.03  -0.04   0.41
+    C3 cool      W  15.90     5        5       42   -1.28 -0.87    -1.50    -0.28 -1.08   1.70   0.66  -0.03
+    C4 cool      S  20.92    10        9       81   -1.03 -0.59    -0.92    -0.28 -0.59   0.11   0.05   0.30
+    C5 cool      W  20.22    16       11       79   -1.51 -1.15    -1.49    -0.79 -1.28   0.53   0.14   0.36
+    C6 cool     SE  13.88    21       16       93   -1.16 -1.37    -2.00    -0.70 -1.39  -1.77  -0.26  -0.03
+    C8 cool     SW  23.20     5        3       40   -1.08 -2.19    -2.69    -1.66 -1.99   0.47  -0.16   0.70
+    C9 cool     NE   4.33     1        1       48   -0.75 -0.83    -1.18    -0.52 -0.74  -0.13  -0.63   0.85
+    W1 warm      E -24.67     4        4       52    1.18  1.33     0.60     2.04  1.04  -0.44   0.11  -0.09
+   W10 warm      S  40.00    53       20      188    1.03  0.72     0.38     1.04  0.79   0.72  -0.78  -0.76
+   W11 warm     NE -19.04    32       29      130    1.51  1.44     0.80     2.05  1.39  -1.64  -1.48  -0.95
+   W12 warm      W  33.90    56       10      120    1.06  1.31     0.96     1.64  1.28   1.27  -1.26  -0.56
+   W13 warm      W  37.07    64       13      122    1.66  1.88     1.53     2.25  1.75   1.87  -0.46   0.88
+   W14 warm      S  -7.62     2        2       94    0.83 -0.36    -0.78     0.07  0.19  -0.22  -0.40  -0.30
+   W15 warm      E -24.00     1        1       25    1.87 -0.65    -2.83     1.32 -0.47   0.77  -0.76  -0.84
+   W16 warm     SE -17.86     8        6       57    1.22  1.27     0.66     1.93  1.48   0.22  -0.92  -0.98
+   W17 warm     SE  25.25     4        3      119    0.87  0.02    -0.64     0.52  1.00  -0.58   0.09  -0.91
+   W18 warm     NE  21.94    13       11      121    0.99  0.60     0.23     0.93  0.67  -0.28  -0.53  -0.79
+   W19 warm      E  35.99   198       61      145    1.29  0.43    -0.07     0.86  0.50  -0.01  -0.86  -0.98
+    W2 warm      S -12.91     1        1       19    0.81  0.21    -0.50     0.96  1.57  -0.98   0.12  -0.98
+   W20 warm     NE  17.22     5        5       94    0.86  0.57     0.30     0.83  0.52  -0.30  -1.23  -0.91
+   W21 warm     NE  13.60     3        3       66    1.16  0.88     0.67     1.10  1.12   0.16  -0.55  -0.69
+   W22 warm      S  44.07    75       23       95    1.74  1.83     1.04     2.66  1.86   1.68   0.71   0.50
+   W23 warm     SW  45.00    18        8       61    1.25  1.42     0.91     1.96  1.24   1.96   0.86   0.85
+    W4 warm     NE -19.79     4        4      101    1.22  0.27     0.06     0.54  0.40  -0.10  -0.85  -0.29
+    W5 warm     NE  11.75     3        3       68    0.98  0.95     0.35     1.49  1.15  -1.74  -2.30  -1.00
+    W6 warm      S  23.83     2        2       38    0.85  1.19     0.66     1.73  1.28   0.28  -0.19  -0.55
+    W7 warm      E  26.39   134      122      592    1.16  1.09     0.96     1.21  1.14  -0.55  -0.77  -0.96
+    W8 warm      N -23.50     3        2      109    0.91  0.72     0.24     1.22  0.69   0.87  -0.80  -1.00
+    W9 warm      N   2.00     2        2       54    0.60  0.42    -0.17     1.03  0.67   0.07  -0.90  -0.92
+
+== (2) all coasts within 50 km: every exposure day, binned by the implied onshore component of the outer wind
+   (negative = the idealized outer circulation blows off the land); box-weighted means, 90% year-bootstrap intervals
+-- lat < 30: 761 stations, 301 boxes, 583243 station-days
+   Tmax   -1 to -0.6: +0.33 [+0.27,+0.37]  -0.6 to -0.2: +0.03 [-0.03,+0.08]  -0.2 to 0.2: -0.22 [-0.28,-0.15]  0.2 to 0.6: -0.44 [-0.51,-0.39]  0.6 to 1: -0.59 [-0.65,-0.56]
+   T_pm   -1 to -0.6: +0.39 [+0.35,+0.44]  -0.6 to -0.2: +0.08 [+0.02,+0.13]  -0.2 to 0.2: -0.19 [-0.23,-0.14]  0.2 to 0.6: -0.41 [-0.45,-0.36]  0.6 to 1: -0.58 [-0.62,-0.52]
+   Td_pm  -1 to -0.6: -0.11 [-0.15,-0.08]  -0.6 to -0.2: -0.08 [-0.11,-0.03]  -0.2 to 0.2: +0.05 [-0.00,+0.11]  0.2 to 0.6: +0.19 [+0.14,+0.24]  0.6 to 1: +0.30 [+0.24,+0.33]
+   on_pm  -1 to -0.6: -1.14 [-1.20,-1.10]  -0.6 to -0.2: -0.64 [-0.69,-0.60]  -0.2 to 0.2: -0.17 [-0.20,-0.11]  0.2 to 0.6: +0.36 [+0.31,+0.39]  0.6 to 1: +0.85 [+0.81,+0.90]
+-- lat 30-45: 606 stations, 79 boxes, 374524 station-days
+   Tmax   -1 to -0.6: +0.55 [+0.40,+0.69]  -0.6 to -0.2: +0.21 [+0.04,+0.38]  -0.2 to 0.2: -0.01 [-0.15,+0.13]  0.2 to 0.6: -0.14 [-0.28,-0.02]  0.6 to 1: -0.13 [-0.24,+0.05]
+   T_pm   -1 to -0.6: +0.56 [+0.41,+0.67]  -0.6 to -0.2: +0.20 [+0.05,+0.36]  -0.2 to 0.2: -0.05 [-0.17,+0.10]  0.2 to 0.6: -0.15 [-0.29,-0.02]  0.6 to 1: -0.16 [-0.27,-0.01]
+   Td_pm  -1 to -0.6: -0.18 [-0.37,-0.04]  -0.6 to -0.2: -0.07 [-0.25,+0.04]  -0.2 to 0.2: +0.17 [-0.00,+0.32]  0.2 to 0.6: +0.50 [+0.34,+0.67]  0.6 to 1: +1.18 [+1.01,+1.32]
+   on_pm  -1 to -0.6: -1.24 [-1.40,-1.12]  -0.6 to -0.2: -0.67 [-0.79,-0.54]  -0.2 to 0.2: -0.05 [-0.17,+0.10]  0.2 to 0.6: +0.54 [+0.43,+0.63]  0.6 to 1: +1.24 [+1.15,+1.34]
+-- lat < 30, outside the 41 regions: 626 stations, 251 boxes, 456670 station-days
+   Tmax   -1 to -0.6: +0.26 [+0.21,+0.30]  -0.6 to -0.2: +0.02 [-0.05,+0.07]  -0.2 to 0.2: -0.16 [-0.23,-0.10]  0.2 to 0.6: -0.32 [-0.39,-0.27]  0.6 to 1: -0.44 [-0.51,-0.41]
+   T_pm   -1 to -0.6: +0.33 [+0.29,+0.38]  -0.6 to -0.2: +0.08 [+0.02,+0.12]  -0.2 to 0.2: -0.12 [-0.17,-0.07]  0.2 to 0.6: -0.29 [-0.34,-0.23]  0.6 to 1: -0.44 [-0.49,-0.37]
+   Td_pm  -1 to -0.6: -0.02 [-0.06,+0.01]  -0.6 to -0.2: -0.02 [-0.05,+0.03]  -0.2 to 0.2: +0.10 [+0.05,+0.15]  0.2 to 0.6: +0.18 [+0.13,+0.22]  0.6 to 1: +0.27 [+0.22,+0.31]
+   on_pm  -1 to -0.6: -1.16 [-1.22,-1.11]  -0.6 to -0.2: -0.65 [-0.70,-0.60]  -0.2 to 0.2: -0.14 [-0.18,-0.09]  0.2 to 0.6: +0.39 [+0.34,+0.43]  0.6 to 1: +0.91 [+0.87,+0.96]
+-- lat < 30, Southern Hemisphere: 235 stations, 123 boxes, 101959 station-days
+   Tmax   -1 to -0.6: +0.49 [+0.36,+0.57]  -0.6 to -0.2: +0.06 [-0.03,+0.15]  -0.2 to 0.2: -0.27 [-0.40,-0.16]  0.2 to 0.6: -0.52 [-0.66,-0.44]  0.6 to 1: -0.66 [-0.80,-0.62]
+   T_pm   -1 to -0.6: +0.50 [+0.42,+0.58]  -0.6 to -0.2: +0.16 [+0.08,+0.23]  -0.2 to 0.2: -0.20 [-0.29,-0.10]  0.2 to 0.6: -0.48 [-0.54,-0.36]  0.6 to 1: -0.65 [-0.72,-0.55]
+   Td_pm  -1 to -0.6: -0.02 [-0.08,+0.05]  -0.6 to -0.2: +0.04 [-0.03,+0.14]  -0.2 to 0.2: +0.27 [+0.18,+0.37]  0.2 to 0.6: +0.37 [+0.27,+0.45]  0.6 to 1: +0.41 [+0.31,+0.48]
+   on_pm  -1 to -0.6: -1.33 [-1.46,-1.27]  -0.6 to -0.2: -0.77 [-0.86,-0.69]  -0.2 to 0.2: -0.20 [-0.26,-0.11]  0.2 to 0.6: +0.38 [+0.32,+0.48]  0.6 to 1: +0.98 [+0.90,+1.03]
+-- lat < 30, 300-700 km: 746 stations, 291 boxes, 177694 station-days
+   Tmax   -1 to -0.6: +0.13 [+0.07,+0.20]  -0.6 to -0.2: -0.29 [-0.37,-0.20]  -0.2 to 0.2: -0.65 [-0.72,-0.55]  0.2 to 0.6: -1.00 [-1.05,-0.89]  0.6 to 1: -1.20 [-1.29,-1.13]
+   T_pm   -1 to -0.6: +0.19 [+0.13,+0.25]  -0.6 to -0.2: -0.29 [-0.38,-0.23]  -0.2 to 0.2: -0.68 [-0.74,-0.60]  0.2 to 0.6: -1.00 [-1.07,-0.92]  0.6 to 1: -1.30 [-1.38,-1.23]
+   Td_pm  -1 to -0.6: -0.03 [-0.09,+0.05]  -0.6 to -0.2: +0.00 [-0.06,+0.11]  -0.2 to 0.2: +0.19 [+0.13,+0.27]  0.2 to 0.6: +0.38 [+0.32,+0.45]  0.6 to 1: +0.56 [+0.50,+0.61]
+   on_pm  -1 to -0.6: -2.04 [-2.09,-1.97]  -0.6 to -0.2: -1.27 [-1.38,-1.20]  -0.2 to 0.2: -0.37 [-0.45,-0.30]  0.2 to 0.6: +0.47 [+0.39,+0.53]  0.6 to 1: +1.36 [+1.28,+1.42]
+-- lat < 30, 700-1300 km: 761 stations, 301 boxes, 405549 station-days
+   Tmax   -1 to -0.6: +0.42 [+0.36,+0.47]  -0.6 to -0.2: +0.17 [+0.11,+0.21]  -0.2 to 0.2: -0.05 [-0.12,+0.02]  0.2 to 0.6: -0.18 [-0.26,-0.15]  0.6 to 1: -0.34 [-0.38,-0.30]
+   T_pm   -1 to -0.6: +0.48 [+0.42,+0.53]  -0.6 to -0.2: +0.23 [+0.17,+0.27]  -0.2 to 0.2: +0.03 [-0.02,+0.08]  0.2 to 0.6: -0.15 [-0.19,-0.10]  0.6 to 1: -0.26 [-0.31,-0.21]
+   Td_pm  -1 to -0.6: -0.16 [-0.20,-0.12]  -0.6 to -0.2: -0.10 [-0.15,-0.06]  -0.2 to 0.2: -0.02 [-0.06,+0.05]  0.2 to 0.6: +0.10 [+0.02,+0.14]  0.6 to 1: +0.15 [+0.11,+0.20]
+   on_pm  -1 to -0.6: -0.77 [-0.83,-0.73]  -0.6 to -0.2: -0.42 [-0.46,-0.36]  -0.2 to 0.2: -0.06 [-0.09,-0.02]  0.2 to 0.6: +0.31 [+0.27,+0.36]  0.6 to 1: +0.63 [+0.58,+0.68]
+
+== slope on the implied component (K or m/s per unit; -1 = straight off the land, +1 = straight onto it); boxes weighted equally
+  lat < 30                       Tmax   all a=0.4 -0.55, all a=0 -0.48, all a=1 -0.52, all wrong rotation +0.34, within-sector a=0.4 -0.50, ws_lo -0.54, ws_hi -0.46, within-sector wrong rotation +0.30
+  lat < 30                       Td_pm  all a=0.4 +0.23, all a=0 +0.18, all a=1 +0.25, all wrong rotation -0.10, within-sector a=0.4 +0.15, ws_lo +0.12, ws_hi +0.19, within-sector wrong rotation -0.04
+  lat < 30                       on_pm  all a=0.4 +1.21, all a=0 +1.02, all a=1 +1.18, all wrong rotation -0.69, within-sector a=0.4 +1.22, ws_lo +1.17, ws_hi +1.26, within-sector wrong rotation -0.68
+  lat 30-45                      Tmax   all a=0.4 -0.41, all a=0 -0.43, all a=1 -0.36, all wrong rotation +0.42, within-sector a=0.4 -0.58, ws_lo -0.68, ws_hi -0.48, within-sector wrong rotation +0.54
+  lat 30-45                      Td_pm  all a=0.4 +0.58, all a=0 +0.52, all a=1 +0.61, all wrong rotation -0.43, within-sector a=0.4 +0.19, ws_lo +0.10, ws_hi +0.29, within-sector wrong rotation -0.14
+  lat 30-45                      on_pm  all a=0.4 +1.44, all a=0 +1.33, all a=1 +1.46, all wrong rotation -1.17, within-sector a=0.4 +1.44, ws_lo +1.37, ws_hi +1.50, within-sector wrong rotation -1.08
+  lat < 30, Southern Hemisphere  Tmax   all a=0.4 -0.65, all a=0 -0.56, all a=1 -0.62, all wrong rotation +0.41, within-sector a=0.4 -0.57, ws_lo -0.66, ws_hi -0.49, within-sector wrong rotation +0.35
+  lat < 30, Southern Hemisphere  Td_pm  all a=0.4 +0.23, all a=0 +0.17, all a=1 +0.25, all wrong rotation -0.10, within-sector a=0.4 +0.14, ws_lo +0.07, ws_hi +0.20, within-sector wrong rotation -0.05
+  lat < 30, Southern Hemisphere  on_pm  all a=0.4 +1.33, all a=0 +1.10, all a=1 +1.33, all wrong rotation -0.75, within-sector a=0.4 +1.36, ws_lo +1.28, ws_hi +1.44, within-sector wrong rotation -0.74
+
+== per-station slopes (K or m/s per unit of the implied onshore component; negative Tmax slope = warmer when the outer wind blows off the land)
+  lat 30-45: Tmax slope median -0.20 K, negative at 326/537 stations; onshore slope median +1.39 m/s, positive at 519/531; Td slope median +1.18 K
+  lat < 30: Tmax slope median -0.38 K, negative at 482/605 stations; onshore slope median +1.05 m/s, positive at 621/702; Td slope median +0.17 K

@@ -1,0 +1,111 @@
+gcg_eval_all.py md5 e2677048672a55b5e2dd99c1d50f0126; gcg_eval.py md5 832764af99ec5884957543d470f5c4c8
+cases 238; analysis A cases found at /scratch/$USER/tcheat/ggc/out_oper/gcg_cases.csv: 107
+
+================ model oper: 238 cases (137 not run in A), 126 storms, 34 regions
+        kind  n_cases  n_storms  n_new  ex_map  anom  ctl_err  d_full  pos_full  d_free  pos_free  d_core  pos_core  d_null  pos_null  d850_free  usable  consistent
+region                                                                                                                                                              
+C1      cool        5         3      2   -0.88 -0.10    -0.65   -0.01      0.40   -0.03      0.40   -0.19      0.40    0.11      0.40      -0.04    True        True
+C11     cool        2         1      0   -1.02  0.04    -1.36   -0.01      0.50   -0.09      0.50   -0.17      0.00    0.18      1.00      -0.04   False       False
+C12     cool       21        18     18   -0.64 -0.38    -1.11   -0.68      0.29   -0.60      0.29   -0.34      0.33    0.06      0.52       0.30    True        True
+C15     cool       20        13     18   -0.99 -0.52    -0.02   -0.34      0.20   -0.29      0.20   -0.27      0.30   -0.21      0.45      -0.19    True        True
+C16     cool       14        10     11   -0.98 -0.77    -0.73   -0.74      0.21   -0.53      0.36   -0.32      0.43   -0.23      0.43       0.27    True        True
+C17     cool        5         4      2   -0.63 -0.68    -0.80    0.30      0.60    0.24      0.40    0.04      0.20   -0.48      0.00       0.22    True       False
+C18     cool        7         4      4   -0.69 -0.64    -2.20    0.05      0.57    0.00      0.71   -0.00      0.71    0.45      1.00       0.05    True       False
+C3      cool        1         1      0   -1.28  0.03    -0.08   -0.27      0.00    0.16      1.00    0.22      1.00    0.04      1.00       0.06   False       False
+C4      cool        5         3      2   -1.03 -0.20    -0.24   -0.85      0.00   -0.78      0.00   -0.57      0.00   -0.10      0.33       0.74    True        True
+C5      cool        6         4      3   -1.51 -1.87    -1.20   -0.87      0.17    0.12      0.50    0.59      0.67    0.33      1.00       0.12    True       False
+C6      cool        1         1      0   -1.16  0.16    -0.61   -0.26      0.00   -0.24      0.00   -0.27      0.00    0.16      1.00      -0.19   False       False
+C7      cool        3         3      0   -1.20  0.53    -0.55   -0.01      0.33   -0.02      0.33   -0.29      0.00    0.18      0.67       0.15    True        True
+C8      cool        4         3      1   -1.08 -1.59    -0.99    0.89      0.75    0.73      1.00    0.48      1.00   -0.09      0.25       0.22    True       False
+C9      cool        6         5      3   -0.75 -0.49    -2.46   -0.60      0.00   -0.54      0.17   -0.35      0.17    0.09      0.67      -0.28    True        True
+W1      warm        1         1      0    1.18  3.39     0.02   -0.46      0.00   -0.50      0.00   -0.53      0.00    1.00      1.00      -0.36   False       False
+W10     warm        8         8      4    1.03  1.01    -0.60    0.28      0.62    0.25      0.62    0.19      0.62   -0.04      0.50       0.20    True        True
+W12     warm        7         6      3    1.06 -0.23    -0.82   -0.30      0.43   -0.44      0.43   -0.21      0.57    0.28      1.00       0.20    True       False
+W13     warm        7         7      3    1.66  3.26    -1.24    1.03      1.00    1.00      1.00    1.14      1.00    0.03      0.71       1.16    True        True
+W14     warm        5         4      1    0.83  1.27    -1.33    0.46      0.60    0.29      0.60    0.07      0.60    0.22      1.00       0.18    True        True
+W15     warm        1         1      0    1.87 -1.63    -1.07    0.63      1.00    0.59      1.00   -0.02      0.00   -0.38      0.00       0.77   False       False
+W17     warm        6         6      2    0.87  0.37    -1.25    1.11      1.00    1.09      1.00    0.80      1.00   -0.04      0.17       0.97    True        True
+W18     warm        7         5      4    0.99  0.44    -1.14    0.83      0.86    0.76      0.86    0.58      0.86    0.30      0.71       0.64    True        True
+W19     warm        1         1      0    1.29  2.22    -0.30   -0.25      0.00   -0.18      0.00   -0.16      0.00   -0.26      0.00      -0.17   False       False
+W2      warm        6         4      3    0.81  0.70    -0.23    1.00      1.00    0.44      0.83    0.30      0.67    0.02      0.50       0.40    True        True
+W20     warm        5         3      1    0.86  0.77    -0.70    0.80      0.80    0.72      0.80    0.55      0.80    0.11      0.80       0.15    True        True
+W21     warm        4         3      0    1.16  1.53    -1.17    1.36      1.00    1.34      1.00    1.07      1.00   -0.01      0.25       0.52    True        True
+W22     warm       13         9     10    1.74  2.33    -0.51   -0.03      0.46   -0.06      0.46   -0.03      0.38   -0.20      0.38      -0.09    True       False
+W23     warm        9         6      5    1.25  1.09    -0.46   -0.23      0.11   -0.28      0.11   -0.17      0.11   -0.05      0.33       0.09    True       False
+W3      warm       15         8     11    0.74  0.69    -0.29    0.97      1.00    0.84      0.87    0.55      0.80   -0.07      0.53       0.25    True        True
+W4      warm        7         5      4    1.22  0.94    -0.41    0.59      1.00    0.34      1.00    0.22      1.00    0.19      0.86       0.24    True        True
+W5      warm        8         5      4    0.98  1.40     0.11    1.08      1.00    0.63      0.88    0.49      0.88    0.02      0.75       0.77    True        True
+W6      warm        3         2      0    0.85  0.59    -0.58    0.87      1.00    0.68      1.00    0.43      1.00   -0.03      0.00       1.55    True        True
+W8      warm       14        10     11    0.91  0.38     0.31   -0.02      0.57    0.45      0.71    0.19      0.64   -0.12      0.43       0.39    True        True
+W9      warm       11         7      7    0.60  0.16    -2.44    0.68      0.73    0.74      0.73    0.56      0.82   -0.12      0.18       0.38    True        True
+
+usable warm regions 17; pooled map warming +1.03 K
+pooled warm d_free +0.52 K [+0.40, +0.63] = 50% of the map warming [39%, 61%]
+pooled warm d_full +0.62 [+0.48, +0.76]; d_core +0.40 [+0.30, +0.49]; d_null +0.03 [-0.02, +0.08]
+warm regions with d_free > 0 and > d_null: 14 of 17
+share of the case-day anomaly: 53% [39%, 74%]
+cases not run in A: 71 in 13 warm regions with >= 2: pooled d_free +0.36 [+0.16, +0.55], map warming +1.07
+hotter half of each region's days +0.52 K, less hot half +0.49 K; corr(case-day anomaly, d_free) +0.08
+CTL - ERA5, warm cases: -0.63 K, within 1 K in 63%; 850-hPa d_free +0.45 K
+cool mirror: pooled d_free -0.15 [-0.31, +0.01] (map -0.94); regions with d_free < 0 and < d_null: 7 of 11
+regrowth (deficit > 3 hPa at V), WIDEL: 2% of 712 runs
+repeatability vs analysis A: 101 matching cases, max |d_free difference| 0.062 K
+
+================ model small: 238 cases (137 not run in A), 126 storms, 34 regions
+        kind  n_cases  n_storms  n_new  ex_map  anom  ctl_err  d_full  pos_full  d_free  pos_free  d_core  pos_core  d_null  pos_null  d850_free  usable  consistent
+region                                                                                                                                                              
+C1      cool        5         3      2   -0.88 -0.10    -0.44   -0.24      0.20   -0.18      0.40   -0.20      0.40    0.21      0.60      -0.02    True        True
+C11     cool        2         1      0   -1.02  0.04    -0.24   -0.36      0.50   -0.21      0.50   -0.23      0.00    0.28      1.00      -0.04   False       False
+C12     cool       21        18     18   -0.64 -0.38    -0.20   -0.71      0.29   -0.54      0.33   -0.26      0.43    0.00      0.52       0.23    True        True
+C15     cool       20        13     18   -0.99 -0.52     0.34   -0.53      0.15   -0.46      0.20   -0.40      0.30   -0.05      0.60      -0.22    True        True
+C16     cool       14        10     11   -0.98 -0.77    -0.00   -0.83      0.21   -0.50      0.43   -0.31      0.43   -0.32      0.36       0.25    True        True
+C17     cool        5         4      2   -0.63 -0.68    -0.12   -0.14      0.20    0.15      0.20    0.01      0.20   -0.33      0.20       0.15    True       False
+C18     cool        7         4      4   -0.69 -0.64    -0.15   -0.05      0.29    0.00      0.57   -0.01      0.57    0.20      1.00      -0.00    True       False
+C3      cool        1         1      0   -1.28  0.03     0.04   -0.16      0.00    0.03      1.00    0.10      1.00    0.13      1.00       0.04   False       False
+C4      cool        5         3      2   -1.03 -0.20     0.01   -0.85      0.00   -0.66      0.00   -0.45      0.00   -0.07      0.33       0.72    True        True
+C5      cool        6         4      3   -1.51 -1.87    -0.26   -1.31      0.00   -0.09      0.50    0.59      0.83    0.22      0.83       0.10    True        True
+C6      cool        1         1      0   -1.16  0.16    -0.14   -0.37      0.00   -0.35      0.00   -0.25      0.00    0.12      1.00      -0.21   False       False
+C7      cool        3         3      0   -1.20  0.53     0.31   -0.24      0.33   -0.23      0.33   -0.34      0.33    0.17      0.67      -0.07    True        True
+C8      cool        4         3      1   -1.08 -1.59    -0.11    1.00      1.00    0.83      1.00    0.49      1.00   -0.14      0.25       0.17    True       False
+C9      cool        6         5      3   -0.75 -0.49    -0.21   -0.58      0.00   -0.51      0.00   -0.28      0.17    0.08      0.83      -0.35    True        True
+W1      warm        1         1      0    1.18  3.39     0.57   -1.06      0.00   -0.76      0.00   -0.74      0.00    0.07      1.00      -0.63   False       False
+W10     warm        8         8      4    1.03  1.01    -0.02    0.23      0.62    0.19      0.50    0.13      0.62   -0.06      0.25       0.19    True        True
+W12     warm        7         6      3    1.06 -0.23     0.06   -0.48      0.14   -0.36      0.43   -0.06      0.57    0.20      0.86       0.22    True       False
+W13     warm        7         7      3    1.66  3.26    -0.54    1.12      1.00    1.17      1.00    1.27      1.00    0.07      0.71       1.20    True        True
+W14     warm        5         4      1    0.83  1.27    -0.06    0.51      0.60    0.38      0.60    0.15      0.60    0.07      0.80       0.24    True        True
+W15     warm        1         1      0    1.87 -1.63    -0.39    0.32      1.00    0.26      1.00   -0.00      0.00   -0.27      0.00       0.61   False       False
+W17     warm        6         6      2    0.87  0.37     0.16    1.05      1.00    0.98      1.00    0.78      1.00   -0.06      0.33       0.84    True        True
+W18     warm        7         5      4    0.99  0.44    -0.35    0.66      0.86    0.61      0.86    0.46      0.86    0.24      0.57       0.59    True        True
+W19     warm        1         1      0    1.29  2.22    -0.31   -0.31      0.00   -0.14      0.00   -0.11      0.00   -0.35      0.00      -0.09   False       False
+W2      warm        6         4      3    0.81  0.70     0.34    0.62      0.83    0.17      0.67    0.05      0.67   -0.12      0.50       0.27    True        True
+W20     warm        5         3      1    0.86  0.77     0.33    0.73      0.80    0.64      1.00    0.49      1.00   -0.00      0.40       0.21    True        True
+W21     warm        4         3      0    1.16  1.53     0.04    1.09      1.00    1.03      1.00    0.90      1.00   -0.01      0.50       0.59    True        True
+W22     warm       13         9     10    1.74  2.33    -0.09   -0.03      0.54   -0.04      0.54   -0.00      0.54   -0.18      0.38      -0.08    True       False
+W23     warm        9         6      5    1.25  1.09    -0.50   -0.20      0.11   -0.21      0.11   -0.15      0.11   -0.07      0.22       0.16    True       False
+W3      warm       15         8     11    0.74  0.69    -0.08    0.75      0.80    0.71      0.80    0.47      0.87    0.04      0.67       0.19    True        True
+W4      warm        7         5      4    1.22  0.94    -0.08    0.28      0.86    0.15      0.86    0.11      0.86    0.01      0.29       0.13    True        True
+W5      warm        8         5      4    0.98  1.40     0.06    0.80      0.88    0.46      0.88    0.34      0.88    0.04      0.38       0.76    True        True
+W6      warm        3         2      0    0.85  0.59    -0.29    0.70      1.00    0.53      1.00    0.37      1.00   -0.04      0.00       1.47    True        True
+W8      warm       14        10     11    0.91  0.38     0.28    0.12      0.57    0.53      0.71    0.29      0.71   -0.11      0.29       0.35    True        True
+W9      warm       11         7      7    0.60  0.16    -0.32    0.66      0.82    0.67      0.91    0.51      1.00   -0.16      0.09       0.35    True        True
+
+usable warm regions 17; pooled map warming +1.03 K
+pooled warm d_free +0.45 K [+0.34, +0.56] = 43% of the map warming [33%, 54%]
+pooled warm d_full +0.51 [+0.38, +0.63]; d_core +0.36 [+0.28, +0.44]; d_null -0.01 [-0.05, +0.04]
+warm regions with d_free > 0 and > d_null: 14 of 17
+share of the case-day anomaly: 46% [33%, 63%]
+cases not run in A: 71 in 13 warm regions with >= 2: pooled d_free +0.31 [+0.15, +0.48], map warming +1.07
+hotter half of each region's days +0.46 K, less hot half +0.41 K; corr(case-day anomaly, d_free) +0.09
+CTL - ERA5, warm cases: -0.04 K, within 1 K in 84%; 850-hPa d_free +0.43 K
+cool mirror: pooled d_free -0.20 [-0.34, -0.05] (map -0.94); regions with d_free < 0 and < d_null: 8 of 11
+regrowth (deficit > 3 hPa at V), WIDEL: 0% of 712 runs
+
+================ READING (frozen A2 rules)
+PASS  0 >= 10 usable warm regions
+PASS  1 pooled warm d_free >= 1/2 map warming, interval above 0
+PASS  2 >= 2/3 of usable warm regions with d_free > 0 and > d_null
+PASS  3 |pooled d_null| <= 0.3 K and d_free >= 2 |d_null|
+PASS  4 WIDEL regrowth <= 20%
+FAIL  5 cases not run in A alone: d_free >= 1/2 map warming, interval above 0
+PASS  6 check model (1 deg): pooled warm d_free > 0, interval above 0
+A2 ALL-EXPOSURE-DAY TEST: FAIL -> the NC line stops; analyses A and A2 go into CEE v06

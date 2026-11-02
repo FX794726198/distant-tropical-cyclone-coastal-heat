@@ -1,0 +1,37 @@
+group,month,storm_caused,exposure,hot_all,storm_frac,hot_frac,share_of_hot
+"Northern Hemisphere, other",1,0,0,0,0,0,
+"Northern Hemisphere, other",2,0,0,0,0,0,
+"Northern Hemisphere, other",3,0,0,0,0,0,
+"Northern Hemisphere, other",4,0,0,0,0,0,
+"Northern Hemisphere, other",5,6.1499e+06,5.9821e+07,6.8755e+08,0.091892,0.15068,0.0089447
+"Northern Hemisphere, other",6,8.3107e+05,2.6187e+07,3.026e+08,0.012418,0.066317,0.0027464
+"Northern Hemisphere, other",7,7.8655e+06,1.5463e+08,6.828e+08,0.11753,0.14964,0.01152
+"Northern Hemisphere, other",8,1.3666e+07,2.6107e+08,7.5423e+08,0.2042,0.16529,0.018119
+"Northern Hemisphere, other",9,1.2923e+07,2.5809e+08,6.3705e+08,0.19309,0.13961,0.020285
+"Northern Hemisphere, other",10,1.0536e+07,1.3948e+08,1.0908e+09,0.15744,0.23905,0.0096597
+"Northern Hemisphere, other",11,1.2079e+07,9.7968e+07,3.2884e+08,0.18048,0.072066,0.036733
+"Northern Hemisphere, other",12,2.8749e+06,1.913e+07,7.9155e+07,0.042957,0.017347,0.036321
+Southern Hemisphere,1,8.1562e+05,2.0222e+07,9.3345e+07,0.24304,0.25572,0.0087377
+Southern Hemisphere,2,1.0684e+06,2.0464e+07,8.7287e+07,0.31837,0.23912,0.012241
+Southern Hemisphere,3,1.0421e+06,2.164e+07,8.1048e+07,0.31054,0.22203,0.012858
+Southern Hemisphere,4,1.3662e+05,5.3684e+06,3.8683e+07,0.040711,0.10597,0.0035318
+Southern Hemisphere,5,0,0,0,0,0,
+Southern Hemisphere,6,0,0,0,0,0,
+Southern Hemisphere,7,0,0,0,0,0,
+Southern Hemisphere,8,0,0,0,0,0,
+Southern Hemisphere,9,0,0,0,0,0,
+Southern Hemisphere,10,0,0,0,0,0,
+Southern Hemisphere,11,0,0,0,0,0,
+Southern Hemisphere,12,2.9312e+05,9.8281e+06,6.467e+07,0.087343,0.17716,0.0045325
+southern China (W7),1,0,0,0,0,0,
+southern China (W7),2,0,0,0,0,0,
+southern China (W7),3,0,0,0,0,0,
+southern China (W7),4,0,0,0,0,0,
+southern China (W7),5,4.2492e+06,7.0557e+07,1.0457e+09,0.021606,0.093939,0.0040637
+southern China (W7),6,1.8873e+07,3.0175e+08,1.089e+09,0.095963,0.09783,0.017331
+southern China (W7),7,4.7633e+07,7.8961e+08,1.4063e+09,0.2422,0.12633,0.033873
+southern China (W7),8,5.6294e+07,1.1755e+09,1.2637e+09,0.28624,0.11352,0.044548
+southern China (W7),9,4.2487e+07,1.0262e+09,1.5929e+09,0.21604,0.14311,0.026672
+southern China (W7),10,2.0305e+07,3.8498e+08,2.0943e+09,0.10324,0.18815,0.009695
+southern China (W7),11,6.8247e+06,1.0257e+08,2.0123e+09,0.034702,0.18078,0.0033915
+southern China (W7),12,0,6.9046e+05,6.2714e+08,0,0.05634,0

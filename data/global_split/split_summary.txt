@@ -1,0 +1,10 @@
+cells valid in all three maps: 2171
+corr(ex_any odd, ex_any even) = 0.768
+cells warm and significant in odd years: 462; in even years, same direction: mean +0.966 K, share > 0 0.879
+cells warm and significant in even years: 399; in odd years, same direction: mean +1.029 K, share > 0 0.897
+warm regions of the all-year map: 23; same sign in odd years 22, in even years 23, in both 22
+cool regions of the all-year map: 18; same sign in odd years 18, in even years 18, in both 18
+out_odd_test_even warm: 21 regions tested, 21 with >= 10 days; same sign 20; CI on that side of 0 16; FDR 16; median +0.84 K
+out_odd_test_even cool: 21 regions tested, 21 with >= 10 days; same sign 21; CI on that side of 0 12; FDR 13; median -0.64 K
+out_even_test_odd warm: 23 regions tested, 23 with >= 10 days; same sign 22; CI on that side of 0 13; FDR 14; median +0.66 K
+out_even_test_odd cool: 12 regions tested, 12 with >= 10 days; same sign 12; CI on that side of 0 11; FDR 12; median -0.81 K

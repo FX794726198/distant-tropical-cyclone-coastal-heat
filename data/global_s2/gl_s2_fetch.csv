@@ -1,0 +1,5 @@
+cls,n,n_cells,mean_ex,median_ex,frac_warm_sig,frac_cool_sig,lo,hi
+from land,4301,1936,0.09858,0.1212,0.1979,0.1232,,
+from sea,1141,592,-0.3941,-0.3334,0.078,0.3637,,
+mixed,1305,864,-0.1465,-0.08105,0.1548,0.2061,,
+land minus sea,,,0.4926,,,,0.2527,0.7089

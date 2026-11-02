@@ -1,0 +1,29 @@
+W17 (warm, storms SE): 4 eligible storms; picked 393 EARL 2016-08-06T00 anom +2.02 dist 1126, 398 RICK 2021-10-25T00 anom +1.68 dist 910, 397 GRACE 2021-08-21T00 anom +1.49 dist 1014
+W3 (warm, storms E): 6 eligible storms; picked 321 ELOISE 2021-01-20T12 anom +2.48 dist 678, 319 HEROLD 2020-03-15T12 anom +1.84 dist 1299, 312 ELIAKIM 2018-03-16T12 anom +1.75 dist 1091
+C16 (cool, storms SW): 5 eligible storms; picked 521 BETA 2020-09-20T18 anom -6.66 dist 1099, 522 GAMMA 2020-10-04T18 anom -5.33 dist 990, 517 MARCO 2020-08-23T18 anom -3.27 dist 745
+W22 (warm, storms S): 7 eligible storms; picked 419 MARIA 2017-09-27T18 anom +11.30 dist 668, 417 JOSE 2017-09-18T18 anom +4.82 dist 870, 426 FAY 2020-07-09T18 anom +4.57 dist 734
+W5 (warm, storms NE): 4 eligible storms; picked 330 TITLI 2018-10-11T06 anom +2.57 dist 624, 332 BULBUL:MATMO 2019-11-08T06 anom +2.35 dist 885, 336 JAWAD 2021-12-03T06 anom +1.83 dist 605
+W17: d01 431x311 centre 20.77N -99.51E (mercator), storms >= 714 km and region >= 1157 km inside d01; d02 245x253 (732x756 km) at i,j 125,169
+W3: d01 391x311 centre -15.01N 46.60E (mercator), storms >= 1089 km and region >= 1423 km inside d01; d02 209x325 (624x972 km) at i,j 102,120
+C16: d01 391x351 centre 26.64N -86.20E (mercator), storms >= 880 km and region >= 1246 km inside d01; d02 241x297 (720x888 km) at i,j 197,191
+W22: d01 391x311 centre 37.80N -73.74E (lambert), storms >= 758 km and region >= 872 km inside d01; d02 321x317 (960x948 km) at i,j 157,177
+W5: d01 391x311 centre 13.76N 84.29E (mercator), storms >= 1049 km and region >= 1342 km inside d01; d02 213x361 (636x1080 km) at i,j 122,95
+ case coast         name             V         start           end   dist   anom  optional
+  393   W17         EARL 2016-08-06T00 2016-08-03_18 2016-08-06_18 1126.0  2.018     False
+  398   W17         RICK 2021-10-25T00 2021-10-22_18 2021-10-25_18  910.2  1.684     False
+  397   W17        GRACE 2021-08-21T00 2021-08-18_18 2021-08-21_18 1014.0  1.494     False
+  321    W3       ELOISE 2021-01-20T12 2021-01-18_06 2021-01-21_06  677.5  2.477     False
+  319    W3       HEROLD 2020-03-15T12 2020-03-13_06 2020-03-16_06 1299.0  1.845     False
+  312    W3      ELIAKIM 2018-03-16T12 2018-03-14_06 2018-03-17_06 1091.0  1.751     False
+  521   C16         BETA 2020-09-20T18 2020-09-18_12 2020-09-21_12 1099.0 -6.659     False
+  522   C16        GAMMA 2020-10-04T18 2020-10-02_12 2020-10-05_12  990.3 -5.327     False
+  517   C16        MARCO 2020-08-23T18 2020-08-21_12 2020-08-24_12  745.4 -3.271     False
+  419   W22        MARIA 2017-09-27T18 2017-09-25_12 2017-09-28_12  668.1 11.300     False
+  417   W22         JOSE 2017-09-18T18 2017-09-16_12 2017-09-19_12  870.1  4.820     False
+  426   W22          FAY 2020-07-09T18 2020-07-07_12 2020-07-10_12  733.9  4.568     False
+  330    W5        TITLI 2018-10-11T06 2018-10-09_00 2018-10-12_00  624.3  2.571      True
+  332    W5 BULBUL:MATMO 2019-11-08T06 2019-11-06_00 2019-11-09_00  884.6  2.346      True
+  336    W5        JAWAD 2021-12-03T06 2021-12-01_00 2021-12-04_00  605.3  1.832      True
+    6    GD         MEGI 2016-09-27T06 2016-09-25_00 2016-09-28_00    NaN    NaN     False
+   16    GD     MANGKHUT 2018-09-15T06 2018-09-13_00 2018-09-16_00    NaN    NaN     False
+track rows 483 other-storm rows 1508

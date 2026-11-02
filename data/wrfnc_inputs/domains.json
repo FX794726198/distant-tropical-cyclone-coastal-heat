@@ -1,0 +1,168 @@
+{
+ "W17": {
+  "ref_lat": 20.772,
+  "ref_lon": -99.512,
+  "map_proj": "mercator",
+  "truelat1": 20.772,
+  "stand_lon": -99.512,
+  "e_we": [
+   431,
+   245
+  ],
+  "e_sn": [
+   311,
+   253
+  ],
+  "dx": [
+   12000,
+   3000
+  ],
+  "i_parent_start": [
+   1,
+   125
+  ],
+  "j_parent_start": [
+   1,
+   169
+  ],
+  "storm_edge_km": 714,
+  "region_edge_km": 1157,
+  "d02_km": [
+   732,
+   756
+  ]
+ },
+ "W3": {
+  "ref_lat": -15.012,
+  "ref_lon": 46.597,
+  "map_proj": "mercator",
+  "truelat1": -15.012,
+  "stand_lon": 46.597,
+  "e_we": [
+   391,
+   209
+  ],
+  "e_sn": [
+   311,
+   325
+  ],
+  "dx": [
+   12000,
+   3000
+  ],
+  "i_parent_start": [
+   1,
+   102
+  ],
+  "j_parent_start": [
+   1,
+   120
+  ],
+  "storm_edge_km": 1089,
+  "region_edge_km": 1423,
+  "d02_km": [
+   624,
+   972
+  ]
+ },
+ "C16": {
+  "ref_lat": 26.638,
+  "ref_lon": -86.198,
+  "map_proj": "mercator",
+  "truelat1": 25.0,
+  "stand_lon": -86.198,
+  "e_we": [
+   391,
+   241
+  ],
+  "e_sn": [
+   351,
+   297
+  ],
+  "dx": [
+   12000,
+   3000
+  ],
+  "i_parent_start": [
+   1,
+   197
+  ],
+  "j_parent_start": [
+   1,
+   191
+  ],
+  "storm_edge_km": 880,
+  "region_edge_km": 1246,
+  "d02_km": [
+   720,
+   888
+  ]
+ },
+ "W22": {
+  "ref_lat": 37.795,
+  "ref_lon": -73.735,
+  "map_proj": "lambert",
+  "truelat1": 30.0,
+  "truelat2": 60.0,
+  "stand_lon": -73.735,
+  "e_we": [
+   391,
+   321
+  ],
+  "e_sn": [
+   311,
+   317
+  ],
+  "dx": [
+   12000,
+   3000
+  ],
+  "i_parent_start": [
+   1,
+   157
+  ],
+  "j_parent_start": [
+   1,
+   177
+  ],
+  "storm_edge_km": 758,
+  "region_edge_km": 872,
+  "d02_km": [
+   960,
+   948
+  ]
+ },
+ "W5": {
+  "ref_lat": 13.757,
+  "ref_lon": 84.289,
+  "map_proj": "mercator",
+  "truelat1": 13.757,
+  "stand_lon": 84.289,
+  "e_we": [
+   391,
+   213
+  ],
+  "e_sn": [
+   311,
+   361
+  ],
+  "dx": [
+   12000,
+   3000
+  ],
+  "i_parent_start": [
+   1,
+   122
+  ],
+  "j_parent_start": [
+   1,
+   95
+  ],
+  "storm_edge_km": 1049,
+  "region_edge_km": 1342,
+  "d02_km": [
+   636,
+   1080
+  ]
+ }
+}

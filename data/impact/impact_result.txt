@@ -1,0 +1,73 @@
+A3 impact.py: 41 regions, 1226 region cells (635 warm, 591 cool), 1047 distinct grid points; 15340 days 1980-01-01..2021-12-30
+loaded Tmax (15340, 1047) in 99 s; Tmax range -30.1..48.8 C
+counts done 102 s
+
+================ MAIN (23 warm regions, 2020 population, 1980-2021 mean per year)
+population of the warm-region grid points (2020): 1031 million in 635 grid points
+exposure person-days per year: 4.95 bn; storm-season hot person-days (P90) per year: 16.06 bn
+Q = storm-caused hot person-days per year (f = 0.50): 0.267 bn [0.237, 0.299] (year bootstrap)
+share of storm-season hot person-days: 1.66% [1.49, 1.85]
+  f0.50: Q 0.267 bn, share 1.66%
+  f0.34: Q 0.193 bn, share 1.20%
+  f0.39: Q 0.217 bn, share 1.35%
+  f0.61: Q 0.313 bn, share 1.95%
+  fregion: Q 0.265 bn, share 1.65%
+  P95 hot days: Q 0.144 bn, share 1.79%
+  Tmax >= 35 C: Q 0.087 bn, share 1.65% (hot person-days >= 35 C per year 5.26 bn)
+person-degree-days per year (f = 0.50): 2.344 bn K day
+people with >= 1 storm-caused hot day per year (mean over years): 196 million
+trend 1980-2021: year-varying population +43.3 M person-days per decade (+19.2% of mean); 2020 population +21.1 M per decade (+7.9%)
+
+REGIONS (warm: Q in million person-days per year at f = 0.50; cool: hot person-days prevented)
+region kind  cells  pop2020_M  f_region  delta_mean  exp_days_per_yr     Q_M  Q_share  Q_fregion_M  hot_share  prev016_M  prev100_M
+    W1 warm      9      7.465     0.500       0.592            2.214   0.812    0.003        0.812      0.012        NaN        NaN
+    W2 warm     11      2.781     0.541       0.383            1.751   0.476    0.002        0.504      0.018        NaN        NaN
+    W3 warm      8      4.413     1.000       0.218            2.238   0.369    0.001        0.546      0.007        NaN        NaN
+    W4 warm     28     12.617     0.276       0.406            2.888   1.435    0.005        0.887      0.008        NaN        NaN
+    W5 warm      8     47.795     0.646       0.491            2.524  17.116    0.064       21.454      0.029        NaN        NaN
+    W6 warm      6     64.440     0.799       0.423            1.651   8.787    0.033       11.169      0.015        NaN        NaN
+    W7 warm    209    637.063     0.500       0.503            5.614 196.666    0.737      196.666      0.018        NaN        NaN
+    W8 warm      4      0.007     0.487       0.326            4.935   0.001    0.000        0.001      0.010        NaN        NaN
+    W9 warm      3      0.488     1.000       0.299            2.389   0.079    0.000        0.159      0.023        NaN        NaN
+   W10 warm     25     77.757     0.247       0.430            3.858  15.980    0.060        8.671      0.017        NaN        NaN
+   W11 warm    113      0.081     0.500       0.545            1.962   0.008    0.000        0.008      0.007        NaN        NaN
+   W12 warm     10     26.100     0.000       0.492            2.171   5.011    0.019        0.000      0.012        NaN        NaN
+   W13 warm     14     57.728     0.600       0.738            2.009   9.167    0.034       13.016      0.012        NaN        NaN
+   W14 warm     21      1.964     0.345       0.325            2.505   0.237    0.001        0.180      0.008        NaN        NaN
+   W15 warm      3      0.004     0.500       0.937            1.476   0.001    0.000        0.001      0.019        NaN        NaN
+   W16 warm      7      0.121     0.500       0.394            1.286   0.017    0.000        0.017      0.010        NaN        NaN
+   W17 warm      8      2.437     1.000       0.433            2.262   0.263    0.001        0.450      0.007        NaN        NaN
+   W18 warm     18     15.675     0.770       0.422            2.853   2.156    0.008        2.898      0.007        NaN        NaN
+   W19 warm     74     47.660     0.500       0.253            2.421   5.042    0.019        5.042      0.008        NaN        NaN
+   W20 warm      9      5.164     0.832       0.349            2.868   0.551    0.002        0.846      0.006        NaN        NaN
+   W21 warm     10      2.242     1.000       0.563            1.826   0.826    0.003        1.189      0.024        NaN        NaN
+   W22 warm     29     16.083     0.000       0.872            2.300   1.862    0.007        0.000      0.012        NaN        NaN
+   W23 warm      8      0.965     0.000       0.623            1.515   0.085    0.000        0.000      0.007        NaN        NaN
+    C1 cool      3      1.381       NaN      -0.141            2.421     NaN      NaN          NaN        NaN      0.031      0.205
+    C2 cool     37     20.726       NaN      -0.097            2.112     NaN      NaN          NaN        NaN      0.417      2.339
+    C3 cool     20     70.458       NaN      -0.187            1.590     NaN      NaN          NaN        NaN      1.200      9.878
+    C4 cool     26    107.631       NaN      -0.094            2.428     NaN      NaN          NaN        NaN      1.014      9.586
+    C5 cool     63     69.695       NaN      -0.175            1.705     NaN      NaN          NaN        NaN      0.820     14.711
+    C6 cool     43     76.667       NaN      -0.118            1.491     NaN      NaN          NaN        NaN      0.438      4.162
+    C7 cool     10     27.806       NaN      -0.192            2.355     NaN      NaN          NaN        NaN      0.062      2.924
+    C8 cool     30    154.329       NaN      -0.152            4.551     NaN      NaN          NaN        NaN      4.076     32.781
+    C9 cool      3      0.780       NaN      -0.119            1.897     NaN      NaN          NaN        NaN      0.000      0.143
+   C10 cool    157      0.163       NaN      -0.297            3.486     NaN      NaN          NaN        NaN      0.003      0.055
+   C11 cool      8     46.709       NaN      -0.109            1.619     NaN      NaN          NaN        NaN      0.100      2.329
+   C12 cool      3     12.739       NaN      -0.102            6.024     NaN      NaN          NaN        NaN      0.303      2.589
+   C13 cool     37      0.349       NaN      -0.188            1.791     NaN      NaN          NaN        NaN      0.006      0.070
+   C14 cool    118    113.835       NaN      -0.094            5.704     NaN      NaN          NaN        NaN      5.237     49.178
+   C15 cool      5      0.644       NaN      -0.158            4.757     NaN      NaN          NaN        NaN      0.000      0.104
+   C16 cool      9      4.408       NaN      -0.144            3.190     NaN      NaN          NaN        NaN      0.067      0.634
+   C17 cool      5      3.923       NaN      -0.101            2.005     NaN      NaN          NaN        NaN      0.066      0.734
+   C18 cool     14     12.747       NaN      -0.110            1.813     NaN      NaN          NaN        NaN      0.221      1.611
+
+continent shares of Q: Africa 1.2%, South Asia 9.7%, East and Southeast Asia 85.0%, Australia and New Guinea 0.1%, Americas 4.0%
+cool regions: hot person-days prevented per year 0.014 bn (f_cool 0.16), 0.134 bn (map, f = 1); net with Q: 0.253 bn and 0.133 bn
+
+================ VERDICT (frozen criteria)
+M1 Q >= 1.0 bn: 0.267 -> not met; M2 share >= 10%: 1.66% -> not met
+R robustness: not evaluated (no scale criterion met) -> not met
+B breadth: largest region 73.7% (< 50%), continents >= 10%: 1 (>= 2) -> not met
+A3 FAIL
+total 103 s
