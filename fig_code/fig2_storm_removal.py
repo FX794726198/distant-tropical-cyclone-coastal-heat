@@ -146,7 +146,7 @@ for coast, _ in COASTS:                                  # areas of the maps in 
     bl = np.r_[e[0] + (e[1] - e[0]) * t, np.full(40, e[1]), e[1] - (e[1] - e[0]) * t, np.full(40, e[0])]
     bb = np.r_[np.full(40, e[2]), e[2] + (e[3] - e[2]) * t, np.full(40, e[3]), e[3] - (e[3] - e[2]) * t]
     axa.plot(bl, bb, color='k', lw=0.8, transform=pc, zorder=5.8)
-axa.text(0.006, 0.03, 'GraphCast (0.25°): effect of the storm on 2-m temperature near 14 LT', transform=axa.transAxes, fontsize=7,
+axa.text(0.006, 0.03, 'GraphCast (0.25°): effect of the TC on 2-m temperature near 14 LT', transform=axa.transAxes, fontsize=7,
          ha='left', va='bottom', zorder=8, path_effects=HALO)
 at = lambda lo_, la_: inv.transform(axa.transData.transform(proj.transform_point(lo_, la_, pc)))
 (cx0, cy0), (cx1, cy1) = at(-152, -9), at(-98, -5.5)
@@ -154,7 +154,7 @@ cax = fig.add_axes([cx0, cy0, cx1 - cx0, cy1 - cy0])
 cb = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, orientation='horizontal', extend='both', ticks=bounds[::2])
 cb.ax.tick_params(labelsize=6.5, length=2, pad=1); cb.outline.set_linewidth(0.4)
 cb.ax.set_xticklabels(['−2', '−1', '0', '1', '2'])
-cb.set_label('With the storm minus storm removed (K)', fontsize=6.5, labelpad=1.5)
+cb.set_label('With the TC minus TC removed (K)', fontsize=6.5, labelpad=1.5)
 
 # ---------------------------------------------------------------- b: WRF maps, one per coast
 EW = E[E.pair == 'ctl-widel'].copy(); EW['grp'] = EW.coast.map(GRP)
@@ -296,7 +296,7 @@ for gi, (key, gname, sel, col) in enumerate(GROUPS):
     axd.text(x0 + (nb - 1) / 2, 1.0, gname, transform=axd.get_xaxis_transform(), ha='center', va='bottom', fontsize=7.0, color=col)
 axd.axhline(0, color='#555555', lw=0.5)
 axd.set_xticks([]); axd.set_ylim(*YL); axd.set_yticks([-1, 0, 1, 2, 3]); axd.set_yticklabels(['−1', '0', '1', '2', '3'])
-axd.set_xlim(-0.7, (len(GROUPS) - 1) * gw + nb - 0.3); axd.set_ylabel('Effect of the storm (K)', labelpad=1)
+axd.set_xlim(-0.7, (len(GROUPS) - 1) * gw + nb - 0.3); axd.set_ylabel('Effect of the TC (K)', labelpad=1)
 for s_ in ('top', 'right', 'bottom'):
     axd.spines[s_].set_visible(False)
 nW = int((EW.Tmax.notna()).sum())

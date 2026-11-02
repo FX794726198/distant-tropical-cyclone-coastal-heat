@@ -79,7 +79,7 @@ for n, (c, pair, name) in enumerate(CASES):
     ax.text(0.03, 0.04, name, transform=ax.transAxes, ha='left', va='bottom', fontsize=6.5, path_effects=HALO, zorder=7)
     ax.text(0.97, 0.04, f'{r.dist:,.0f} km', transform=ax.transAxes, ha='right', va='bottom', fontsize=6.5, path_effects=HALO, zorder=7)
     letter('abcd'[n], 0.5 + n * 44.5, H - 1.0)
-hcbar(box(52, Y1 - 4.2, 76, 1.6), cmap, norm, bounds, '2-m temperature with storm minus storm removed, 14 LT (K)',
+hcbar(box(52, Y1 - 4.2, 76, 1.6), cmap, norm, bounds, '2-m temperature with TC minus TC removed, 14 LT (K)',
       ['−4', '−3', '−2', '−1', '0', '1', '2', '3', '4'])
 
 # ---------------------------------------------------------------- e: hourly station-mean difference
@@ -106,9 +106,9 @@ axe.axhline(0, color='#555555', lw=0.5, zorder=1)
 axe.set_xlim(-30, 18); axe.set_xticks(np.arange(-24, 19, 6))
 axe.set_xticklabels([f'{(14 + h) % 24:02d}' for h in np.arange(-24, 19, 6)])
 axe.set_xlabel('Local time (case day at 0; shading: night)', labelpad=1)
-axe.set_ylabel('Warming by the storm,\n19 stations (K)')
+axe.set_ylabel('Warming by the TC,\n19 stations (K)')
 h_, l_ = axe.get_legend_handles_labels()
-h_.append(Line2D([], [], color=GREY, lw=0.9, ls=(0, (3, 1.5)))); l_.append('Same edit, no storm')
+h_.append(Line2D([], [], color=GREY, lw=0.9, ls=(0, (3, 1.5)))); l_.append('Same edit, no TC')
 axe.legend(h_, l_, loc='upper left', ncol=2, frameon=False, fontsize=6.2, handlelength=1.3, columnspacing=0.7, borderaxespad=0.1,
            handletextpad=0.4, labelspacing=0.3)
 axe.set_ylim(-1.0, 8.5); axe.set_yticks(range(0, 9, 2)); axe.axvline(0, ymax=0.68, color='k', lw=0.5, ls=':', zorder=1)
@@ -128,7 +128,7 @@ for c, pair in NULLS:
 axf.axhline(0, color='#555555', lw=0.5, zorder=1)
 axf.set_xlim(0, Cc.km.max() + 5); axf.set_xticks([0, 50, 100, 150, 200])
 axf.set_xlabel('Distance from the coast (km)', labelpad=1)
-axf.set_ylabel('Warming by the storm,\n12–16 LT (K)')
+axf.set_ylabel('Warming by the TC,\n12–16 LT (K)')
 for sp in ('top', 'right'): axf.spines[sp].set_visible(False)
 
 # ---------------------------------------------------------------- g: WRF cross-section from Guangdong towards the storm
@@ -144,7 +144,7 @@ bth = np.arange(-3, 3.01, 0.5); cmh, nmh = disc('RdBu_r', bth)
 axg.contourf(sd, zl, dth, levels=bth, cmap=cmh, norm=nmh, extend='both', zorder=1)
 axg.contour(sd, zl, dw, levels=[-4, -1.5, 1.5, 4], colors='k', linewidths=0.5, linestyles=['--', '--', '-', '-'], zorder=3)
 axg.set_ylim(0.25, 6); axg.set_xlim(sd.min(), min(sd.max(), dstorm + 300)); axg.set_xticks([0, 500, 1000]); axg.tick_params(axis='x', pad=4.5)
-axg.set_xlabel('Distance towards the storm (km)', labelpad=1); axg.set_ylabel('Height (km)', labelpad=1)
+axg.set_xlabel('Distance towards the TC (km)', labelpad=1); axg.set_ylabel('Height (km)', labelpad=1)
 axg.plot([0], [0.12], marker='^', color='k', ms=4, clip_on=False, zorder=5)
 axg.plot([dstorm], [0.12], marker='o', mfc='white', mec='k', mew=0.8, ms=4.5, clip_on=False, zorder=5)
 axg.axvline(dstorm, color='k', lw=0.4, ls=':', zorder=2); axg.axvline(0, color='k', lw=0.4, ls=':', zorder=2)
@@ -205,8 +205,8 @@ for k, (vn, lab, f, nd) in enumerate(VARS):
     ax.text(-0.36, 0.5, lab, transform=ax.transAxes, ha='right', va='center', fontsize=6.2)
     ax.text(1.42, 0.5, f'{A_ - B_:+.{nd}f}'.replace('-', '−'), transform=ax.transAxes, ha='left', va='center', fontsize=6.2,
             fontweight='bold', color=RED if A_ - B_ > 0 else BLUE)
-fig.legend(handles=[Line2D([], [], ls='none', marker='o', ms=3.5, color=RED, label='With storm'),
-                    Line2D([], [], ls='none', marker='o', ms=3.5, color=BLUE, label='Storm removed')],
+fig.legend(handles=[Line2D([], [], ls='none', marker='o', ms=3.5, color=RED, label='With TC'),
+                    Line2D([], [], ls='none', marker='o', ms=3.5, color=BLUE, label='TC removed')],
            loc='upper left', bbox_to_anchor=((XI - 6.0) / W, (y0i + hi_ + 4.6) / H), ncol=2, frameon=False, fontsize=6.2,
            handletextpad=0.2, columnspacing=1.0, borderaxespad=0.0)
 

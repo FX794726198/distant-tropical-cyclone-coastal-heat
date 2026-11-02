@@ -1,4 +1,4 @@
-| Region | Centre | Direction | Points | Days | Storms | Map change (K) | Excess, other half (K) | 95% interval (K) | *P* | *q* |
+| Region | Centre | Direction | Points | Days | TCs | Map change (K) | Excess, other half (K) | 95% interval (K) | *P* | *q* |
 |---|---|---|---|---|---|---|---|---|---|---|
 | *Warm regions found with the odd years, tested with the even years* |  |  |  |  |  |  |  |  |  |  |
 | W1^†^ | 31° E, 26° S | E | 7 | 54 | 22 | +1.64 | +0.45 | −0.29 to 1.20 | 0.239 | 0.264 |

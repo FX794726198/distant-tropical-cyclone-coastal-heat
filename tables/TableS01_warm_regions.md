@@ -1,4 +1,4 @@
-| No. | Region (grid points) | Storm direction; months | Map warming (K) | Hot-day ratio | Days (storms) | Over analogues (K) | *T*~850~ (K) | *q*~850~ (g kg^−1^) | Rise on approach (K) |
+| No. | Region (grid points) | TC direction; months | Map warming (K) | Hot-day ratio | Days (TCs) | Over analogues (K) | *T*~850~ (K) | *q*~850~ (g kg^−1^) | Rise on approach (K) |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | Northeastern South Africa (9) | E; Jan–Mar | +1.18 | 1.49 | 153 (56) | +0.99 (0.56–1.40) | +0.36 | −0.67 | +0.98 (0.29–1.67) |
 | 2 | Inland northern Mozambique (11) | S; Jan–Mar | +0.81 | 1.75 | 126 (41) | +0.75 (0.29–1.23) | +0.77 | −0.22^‡^ | +0.29 (−0.15 to 0.68) |

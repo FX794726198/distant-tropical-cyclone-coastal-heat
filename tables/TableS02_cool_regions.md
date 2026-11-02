@@ -1,4 +1,4 @@
-| No. | Region (grid points) | Storm direction; months | Map change (K) | Days (storms) | Over analogues (K) | *T*~850~ (K) | *q*~850~ (g kg^−1^) | Rain (mm d^−1^) | Cloud cover (%) |
+| No. | Region (grid points) | TC direction; months | Map change (K) | Days (TCs) | Over analogues (K) | *T*~850~ (K) | *q*~850~ (g kg^−1^) | Rain (mm d^−1^) | Cloud cover (%) |
 |---|---|---|---|---|---|---|---|---|---|
 | C1 | Central Mozambique (3) | E; Jan–Mar | −0.88 | 149 (64) | −0.77 (−1.13 to −0.39) | −0.02^‡^ | +0.16^‡^ | +2.2 | +12 |
 | C2 | Madagascar (37) | W; Dec–Apr | −1.15 | 281 (81) | −0.58 (−0.86 to −0.32) | −0.01^‡^ | +0.28 | +3.9 | +17 |

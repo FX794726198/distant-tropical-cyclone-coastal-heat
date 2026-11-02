@@ -29,8 +29,8 @@ PAN = [('small|heat|NOTC|t2m|mean', None, 'small', '1°, core removal'),
        ('small|heat|WIDE|t2m|mean', 'small|heat|WIDE|t2m|agree', 'small', '1°, full removal'),
        ('oper|heat|NOTC|t2m|mean', 'oper|heat|NOTC|t2m|agree', 'oper', '0.25°, core removal'),
        ('oper|heat|WIDEH|t2m|mean', None, 'oper', '0.25°, half of full removal'),
-       ('oper|heat|NULLW|t2m|mean', None, 'oper', '0.25°, full edit, no storm'),
-       ('oper|heat|SHIFTN|t2m|mean', None, 'oper', '0.25°, storm moved southwest'),
+       ('oper|heat|NULLW|t2m|mean', None, 'oper', '0.25°, full edit, no TC'),
+       ('oper|heat|SHIFTN|t2m|mean', None, 'oper', '0.25°, TC moved southwest'),
        ('small|heat|CTLminusERA5|t2m|mean', None, 'small', '1°, control minus ERA5'),
        ('oper|heat|CTLminusERA5|t2m|mean', None, 'oper', '0.25°, control minus ERA5')]
 W = 180; MW = 41.5; MH = MW * (EXT[3] - EXT[2]) / (EXT[1] - EXT[0]); GX = 2.3; GY = 7.0
@@ -94,10 +94,10 @@ for i, (m, v, ck, lab) in enumerate(CONF):
                      mec=CFG[ck], lw=0.9, elinewidth=0.6, label=lab if kd == 'heat' else None, zorder=3)
 axa.axhline(0, color='#555555', lw=0.5, zorder=1)
 axa.set_xticks([24, 30, 36, 42, 48]); axa.set_xlabel('Forecast lead time (h)', labelpad=1)
-axa.set_ylabel('Effect of the storm on\n14 LT temperature (K)')
+axa.set_ylabel('Effect of the TC on\n14 LT temperature (K)')
 h, l = axa.get_legend_handles_labels()
 h += [Line2D([], [], color='#7F7F7F', ls='-', marker='o', ms=2.8, lw=0.9), Line2D([], [], color='#7F7F7F', ls=(0, (3, 1.5)), marker='o', ms=2.8, mfc='white', lw=0.9)]
-l += ['Storm east, hot days', 'Storm southwest']
+l += ['TC east, hot days', 'TC southwest']
 yl = axa.get_ylim(); axa.set_ylim(yl[0], yl[1] + 0.3 * (yl[1] - yl[0]))
 axa.legend(h, l, loc='upper left', ncol=3, frameon=False, handlelength=1.6, columnspacing=0.8, borderaxespad=0.1)
 for i, (m, ck) in enumerate((('small', 'small_wide'), ('oper', 'oper_wide'))):

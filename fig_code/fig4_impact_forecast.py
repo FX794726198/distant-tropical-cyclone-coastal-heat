@@ -99,7 +99,7 @@ cax = fig.add_axes([c0[0], c0[1], c1[0] - c0[0], 1.6 / H])
 cb = plt.colorbar(plt.cm.ScalarMappable(norm=dnorm, cmap=dcm), cax=cax, orientation='horizontal', extend='both', ticks=dbounds)
 cb.outline.set_linewidth(0.3); cb.ax.tick_params(labelsize=6.5, length=1.5, width=0.3, pad=1)
 cb.ax.set_xticklabels(['0.05', '0.1', '0.15', '0.2', '0.3', '0.4', '0.6'])
-fig.text((c0[0] + c1[0]) / 2, c0[1] + 2.4 / H, 'Storm-attributed hot days per year', fontsize=6.5, ha='center', va='bottom')
+fig.text((c0[0] + c1[0]) / 2, c0[1] + 2.4 / H, 'TC-attributed hot days per year', fontsize=6.5, ha='center', va='bottom')
 L(axA, 'a', dx=-0.5, dy=4.2)
 
 # ---------------- b: chance of a hot day when a distant storm is in position (observed, no model), against other days
@@ -120,7 +120,7 @@ axB.set_ylim(-2.9, len(sub) - 0.4)
 axB.set_xlim(0, 36); axB.set_xticks([0, 10, 20, 30])
 axB.set_xlabel('Chance of a hot day (%)')
 axB.text(35.5, 1.0, 'Ratio', transform=axB.get_xaxis_transform(), fontsize=6.5, ha='right', va='bottom', color=RED)
-axB.legend(handles=[Line2D([], [], marker='o', ls='', mfc=RED, mec=RED, ms=3.6, label='Storm in position'),
+axB.legend(handles=[Line2D([], [], marker='o', ls='', mfc=RED, mec=RED, ms=3.6, label='TC in position'),
                     Line2D([], [], marker='o', ls='', mfc='white', mec='#555555', ms=3.4, label='Other days')],
            loc='lower left', bbox_to_anchor=(0.0, 0.0), ncol=1, fontsize=6.5, handletextpad=0.1, borderaxespad=0.1)
 L(axB, 'b', dx=-30.0)
@@ -168,14 +168,14 @@ L(axD, 'd')
 # ---------------- e: heat, then the storm?
 axE = box(CX[2], yB, CW, SH); clean(axE)
 SQ = rd('impact_sequence.csv'); dd = np.arange(1, 6)
-for kind, nm, col, ls in (('storm-caused hot', 'Storm-attributed hot days', RED, '-'), ('hot, not storm-caused', 'Other hot exposure days', '#555555', (0, (3, 1.5))),
+for kind, nm, col, ls in (('storm-caused hot', 'TC-attributed hot days', RED, '-'), ('hot, not storm-caused', 'Other hot exposure days', '#555555', (0, (3, 1.5))),
                           ('all exposure', 'All exposure days', '#AAAAAA', '-')):
     r = SQ[(SQ.kind == kind) & (SQ.region == 'all')]
     if len(r):
         r = r.iloc[0]; v = [100 * r[f'same_by_{k}d'] for k in dd]
         axE.plot(np.r_[0, dd], np.r_[0, v], color=col, ls=ls, lw=1.0, marker='o', ms=2.2, label=nm)
 axE.set_xlim(0, 5.3); axE.set_xticks(range(0, 6)); axE.set_ylim(0, 25)
-axE.set_xlabel('Days after the hot day'); axE.set_ylabel('Storm within 300 km (%)')
+axE.set_xlabel('Days after the hot day'); axE.set_ylabel('TC within 300 km (%)')
 axE.text(0.97, 0.08, '9 in 10: no passage within\n300 km in the next 5 days', transform=axE.transAxes, fontsize=6.5, ha='right', va='center')
 axE.legend(loc='upper left', fontsize=6.5, handlelength=1.4, borderaxespad=0.0)
 L(axE, 'e')
@@ -204,18 +204,18 @@ L(axF, 'f')
 axG = box(CX[1], yC, CW, SH); clean(axG)
 T = pd.read_csv(os.path.join(FCD, 'fc_hres_by_track.csv')); T = T[(T.sign == 'warm') & (T.lead >= 2)]
 for b_, nm, col in (('< 250 km', '< 250 km', '#7F0000'), ('250-500 km', '250–500 km', '#E3826B'),
-                    ('>= 500 km or no storm', 'Farther, missed', '#9E9E9E')):
+                    ('>= 500 km or no TC', 'Farther, missed', '#9E9E9E')):
     s = T[T.bin == b_].sort_values('lead'); axG.plot(s.lead, 100 * s.frac, color=col, lw=1.0, marker='o', ms=2.2, label=nm)
 axG.axhline(100, color='#999999', lw=0.5, ls=(0, (2, 2)))
 axG.set_xlim(1.7, 9.3); axG.set_xticks(range(2, 10)); axG.set_ylim(-100, 120); axG.set_yticks([-50, 0, 50, 100])
 axG.set_xlabel('Forecast lead (days)'); axG.set_ylabel('Heat captured (%)')
-axG.legend(loc='lower left', fontsize=6.5, handlelength=1.2, borderaxespad=0.1, title='Storm position error', title_fontsize=6.5)
+axG.legend(loc='lower left', fontsize=6.5, handlelength=1.2, borderaxespad=0.1, title='TC position error', title_fontsize=6.5)
 L(axG, 'g')
 
 # ---------------- h: hit rate for hot days
 axH = box(CX[2], yC, CW, SH); clean(axH)
 EH_ = pd.read_csv(os.path.join(FCD, 'fc_hres_error_hits.csv'))
-for kind, nm, col in (('exp', 'Hot days with a storm in position', RED), ('ref', 'Other hot days', '#8C8C8C')):
+for kind, nm, col in (('exp', 'Hot days with a TC in position', RED), ('ref', 'Other hot days', '#8C8C8C')):
     r = EH_[(EH_.kind == kind) & (EH_.sign == 'warm')].iloc[0]
     axH.plot(lead, [100 * r[f'hit{k}'] for k in lead], color=col, lw=1.0, marker='o', ms=2.2, label=nm)
 axH.set_xlim(-0.3, 9.3); axH.set_xticks(range(0, 10)); axH.set_ylim(20, 85)
@@ -271,7 +271,7 @@ cb.ax.set_xticklabels([f'{t:g}'.replace('-', '−') for t in abounds])
 hs = [mlines.Line2D([], [], marker='o', ms=4.0, color='black', ls='none'),
       mlines.Line2D([], [], marker='X', ms=6.0, mew=0.6, mfc='#FFE14D', mec='#1F4E9E', ls='none'),
       mlines.Line2D([], [], color='black', lw=0.7)]
-fig.legend(hs, ['observed storm', 'forecast storm', 'observed track'], loc='center right', bbox_to_anchor=((CX[2] + CW) / W, 1 - yl / H),
+fig.legend(hs, ['observed TC', 'forecast TC', 'observed track'], loc='center right', bbox_to_anchor=((CX[2] + CW) / W, 1 - yl / H),
            ncol=3, fontsize=7.5, frameon=False, handlelength=1.2, handletextpad=0.35, columnspacing=1.0, borderaxespad=0, borderpad=0)
 
 print('example land-box means (obs, 3, 5, 7 d):', [round(v, 2) for v in vals])

@@ -61,13 +61,13 @@ axa.text(0.015, 0.985, 'Hatched: P ≥ 0.05\nOutline only: < 15 days', transform
 
 # b: onset composite
 axb = fig.add_axes([0.585, 0.665, 0.405, 0.30])
-for g, col, lab in (('east', RED, 'Storm to the east'), ('southwest', BLUE, 'Storm to the southwest')):
+for g, col, lab in (('east', RED, 'TC to the east'), ('southwest', BLUE, 'TC to the southwest')):
     o = ons[ons.group == g]
     if o['mean'].notna().sum() == 0: continue
     axb.fill_between(o.lag, o.lo, o.hi, color=col, alpha=0.18, lw=0)
     axb.plot(o.lag, o['mean'], color=col, lw=1.2, marker='o', ms=2.5, label=f'{lab} (n = {int(o.n.iloc[0])})')
 axb.axhline(0, color='k', lw=0.4); axb.axvline(0, color=GREY, lw=0.5, ls='--')
-axb.set_xlabel('Days since the storm entered the sector', labelpad=1)
+axb.set_xlabel('Days since the TC entered the sector', labelpad=1)
 axb.set_ylabel('Tmax anomaly (K)'); axb.set_xticks(range(-5, 4)); axb.set_xlim(-5.3, 3.3)
 axb.legend(loc='lower left', frameon=False, fontsize=6.5, handlelength=1.4, borderaxespad=0.1)
 for sp in ('top', 'right'): axb.spines[sp].set_visible(False)
@@ -98,7 +98,7 @@ for yi, (_, r) in zip(y, share.iterrows()):
     axd.scatter(100 * r.expected, yi, s=16, color=GREY, zorder=3); axd.scatter(100 * r.observed, yi, s=16, color=RED, zorder=3)
     axd.text(100 * r.obs_hi + 1.0, yi, f'×{r.ratio:.1f}', va='center', fontsize=6.5, color=RED)
 axd.set_yticks(y); axd.set_yticklabels([p.replace('-', '–\n') for p in share.period], fontsize=6.5); axd.set_ylim(-0.6, len(share) - 0.4)
-axd.set_xlim(0, 50); axd.set_xticks([0, 10, 20, 30, 40, 50]); axd.set_xlabel('Hottest 5% of days with\na storm to the east (%)', labelpad=1, fontsize=7)
+axd.set_xlim(0, 50); axd.set_xticks([0, 10, 20, 30, 40, 50]); axd.set_xlabel('Hottest 5% of days with\na TC to the east (%)', labelpad=1, fontsize=7)
 axd.text(0.5, 0.97, 'Expected', transform=axd.transAxes, color='#6E6E6E', fontsize=6.5, va='top', ha='right')
 axd.text(0.55, 0.97, 'Observed', transform=axd.transAxes, color=RED, fontsize=6.5, va='top', ha='left')
 for sp in ('top', 'right'): axd.spines[sp].set_visible(False)

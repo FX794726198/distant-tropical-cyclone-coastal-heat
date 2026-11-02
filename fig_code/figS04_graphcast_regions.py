@@ -47,7 +47,7 @@ for r in order:
     AXB.plot(o.d_null, yy, marker='|', ms=5, mec='#7A7A7A', mew=0.9, ls='none', zorder=3.5)
 AXB.set_yticks([ys[r] for r in order]); AXB.set_yticklabels([f'{NUM(r)}  {NAME[r]}' for r in order], fontsize=6.4)
 AXB.set_ylim(min(ys.values()) - 0.8, 0.8); AXB.set_xlim(-2.4, 2.3)
-AXB.set_xlabel('Effect of the storm on 14 LT temperature (K)', fontsize=7.5)
+AXB.set_xlabel('Effect of the TC on 14 LT temperature (K)', fontsize=7.5)
 AXB.tick_params(axis='y', length=0, pad=2); AXB.tick_params(axis='x', labelsize=6.5)
 for s in ('top', 'right'):
     AXB.spines[s].set_visible(False)
@@ -74,7 +74,7 @@ for kind, col, mk in (('warm', RED, 'o'), ('cool', BLUE, 's')):
     print('panel b', kind, 'cases', len(c), 'r =', round(float(np.corrcoef(c.anom, c.d_free)[0, 1]), 2), 'quartile means', np.round(my, 2))
 yl_ = np.ceil(np.abs(CU.d_free).max() * 2 + 0.6) / 2
 AXD.set_xlim(-12, 12); AXD.set_ylim(-yl_, yl_); print('panel d y range', CU.d_free.min(), CU.d_free.max(), CU.anom.min(), CU.anom.max())
-AXD.set_xlabel('Case-day anomaly of the region, ERA5 (K)', fontsize=7.5); AXD.set_ylabel('Effect of the storm, 0.25° (K)', fontsize=7.5)
+AXD.set_xlabel('Case-day anomaly of the region, ERA5 (K)', fontsize=7.5); AXD.set_ylabel('Effect of the TC, 0.25° (K)', fontsize=7.5)
 AXD.tick_params(labelsize=6.5)
 for s in ('top', 'right'):
     AXD.spines[s].set_visible(False)

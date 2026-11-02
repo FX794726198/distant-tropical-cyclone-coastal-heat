@@ -112,7 +112,7 @@ axg.set_xticks(range(3)); axg.set_xticklabels([r[1] for r in rows]); axg.set_xli
 axg.set_ylim(-0.85, 0.75); axg.set_yticks([-0.5, 0, 0.5]); axg.set_yticklabels([fmt(v) for v in (-0.5, 0, 0.5)])
 axg.set_ylabel('Slope of daily maximum (K)', labelpad=1)
 hg = [matplotlib.patches.Patch(facecolor='#444444'), matplotlib.patches.Patch(facecolor='white', edgecolor='#444444', lw=0.7)]
-lg = axg.legend(hg, ['same storm direction,\nright rotation', 'wrong rotation'], loc='upper left', frameon=True, framealpha=1.0, edgecolor='none',
+lg = axg.legend(hg, ['same TC direction,\nright rotation', 'wrong rotation'], loc='upper left', frameon=True, framealpha=1.0, edgecolor='none',
                 facecolor='white', fontsize=6.2, handlelength=1.2, borderpad=0.2, labelspacing=0.2, borderaxespad=0.2)
 lg.set_zorder(4)
 

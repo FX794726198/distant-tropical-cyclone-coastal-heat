@@ -1,4 +1,4 @@
-| Storm | Tmax, WRF − ERA5 (K) | T2 at V, WRF − stations (K; n) | Onshore wind, WRF / ERA5 (m s^−1^) | Sunshine, WRF / ERA5 (W m^−2^) | Cloud, WRF / ERA5 | Rain, WRF / ERA5 / stations (mm) | Storm offset (km) | Storm pressure, WRF / ERA5 (hPa) |
+| TC | Tmax, WRF − ERA5 (K) | T2 at V, WRF − stations (K; n) | Onshore wind, WRF / ERA5 (m s^−1^) | Sunshine, WRF / ERA5 (W m^−2^) | Cloud, WRF / ERA5 | Rain, WRF / ERA5 / stations (mm) | TC offset (km) | TC pressure, WRF / ERA5 (hPa) |
 |---|---|---|---|---|---|---|---|---|
 | NW Mexico | | | | | | | | |
 | Earl | −0.1 | +1.8; 1 | +0.1 / 0.0 | 574 / 564 | 0.40 / 0.51 | 2.7 / 4.0 / – | 186 | 1003 / 1002 |

@@ -123,7 +123,7 @@ def load_maps(path):
 
 
 def boot(d, groups, n=4000, seed=0):
-    """Mean and 95% interval, resampling whole storms."""
+    """Mean and 95% interval, resampling whole TCs."""
     rng = np.random.default_rng(seed); g = pd.Series(d).groupby(np.asarray(groups)); s, c = g.sum().values, g.count().values
     k = rng.integers(0, len(s), (n, len(s))); m = s[k].sum(1) / c[k].sum(1)
     return np.mean(d), *np.percentile(m, [2.5, 97.5])

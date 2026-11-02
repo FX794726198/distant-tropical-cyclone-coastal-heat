@@ -42,12 +42,12 @@ def wind_dir(sector, lat):
 
 
 def region_means(d, cols):
-    """storm-equal means within regions"""
+    """TC-equal means within regions"""
     return d.groupby(['region', 'sid'])[cols].mean().groupby('region').mean()
 
 
 def pooled_ci(d, col, n=2000):
-    """region-equal mean and 95% interval from resampling storms within regions"""
+    """region-equal mean and 95% interval from resampling TCs within regions"""
     regs = {r: [g[col].values for _, g in q.groupby('sid')] for r, q in d.groupby('region')}
     m = np.mean([np.mean([s.mean() for s in v]) for v in regs.values()])
     bs = []
@@ -97,7 +97,7 @@ for j, (v, lab) in enumerate(VARS):
     ax.set_ylim(-lim, lim); ax.set_xlim(-0.6, 2.6); ax.set_xticks([])
     ax.set_yticks([-tk, 0, tk]); ax.set_yticklabels([fmt(-tk), '0', fmt(tk)])
     ax.tick_params(axis='y', labelsize=6.3, pad=1)
-    ax.set_title(lab, fontsize=6.5, pad=2, linespacing=0.95)
+    ax.set_title(lab, fontsize=6.5, pad=2, linespacing=1.15)
     for s_ in ('top', 'right', 'bottom'):
         ax.spines[s_].set_visible(False)
 hd = [matplotlib.patches.Rectangle((0, 0), 1, 1, fc=c if f else 'white', ec=c, lw=0.8) for _, _, c, f in grp]
@@ -125,7 +125,7 @@ NR = pd.read_csv(f'{MECH}/coast_normals.csv').set_index('region')
 
 
 def sea_dir(d):
-    """region-equal mean of the seaward coast normal in the storm-relative frame (x towards the storm, SH mirrored)"""
+    """region-equal mean of the seaward coast normal in the TC-relative frame (x towards the TC, SH mirrored)"""
     rows = []
     for _, c in d.iterrows():
         lo0, la0 = NR.loc[c.region, 'lon'], NR.loc[c.region, 'lat']
@@ -174,11 +174,11 @@ for j, (key, ttl) in enumerate(panels):
     ax.set_title(f'{ttl} ({nc[2]} regions, {nc[0]} days)', loc='left', fontsize=6.8, pad=2.5)
     print('panel', key, 'n', nc, 'storm distance', round(d0))
     if j == 0:
-        ax.set_ylabel('Across the storm direction (km)', labelpad=1)
-    ax.set_xlabel('Towards the storm (km)', labelpad=1)
+        ax.set_ylabel('Across the TC direction (km)', labelpad=1)
+    ax.set_xlabel('Towards the TC (km)', labelpad=1)
 ax.quiverkey(qv, (EX + 2 * EW + EG - 2.0) / W, (YB3 - 14.6) / H, 1.0, '1 m s$^{-1}$', labelpos='W', coordinates='figure',
              fontproperties={'size': 6.3}, labelsep=0.04)
-fig.text(DX0 / W, (YB3 - 11.2) / H, 'Arrows: change in 10-m wind (none within 750 km of the storm, capped at 1.5 m s$^{-1}$); purple line: '
+fig.text(DX0 / W, (YB3 - 11.2) / H, 'Arrows: change in 10-m wind (none within 750 km of the TC, capped at 1.5 m s$^{-1}$); purple line: '
          'faster sinking at 500 hPa (0.01 Pa s$^{-1}$)', fontsize=6.3, color='#333333', va='center', ha='left')
 fig.text(DX0 / W, (YB3 - 14.6) / H, 'Blue arrow: mean direction of the sea from the region; dots: at least 80% of regions agree in sign',
          fontsize=6.3, color='#333333', va='center', ha='left')

@@ -98,7 +98,7 @@ cb.ax.tick_params(labelsize=6.5, length=1.5, pad=1); cb.outline.set_linewidth(0.
 cb.ax.set_xticklabels(['−2.5', '−1.5', '−0.5', '0.5', '1.5', '2.5'])
 from matplotlib.patches import Rectangle
 k0 = inv.transform(ax.transData.transform(proj.transform_point(188, -24, pc)))
-KEY = ((NOTEST, 'Warm in one half, not testable in the other'), (NS, 'Not warm in either half'), (NOEXP, 'Few storm days'))
+KEY = ((NOTEST, 'Warm in one half, not testable in the other'), (NS, 'Not warm in either half'), (NOEXP, 'Few TC days'))
 for i, (cl, lab) in enumerate(KEY):
     fig.patches.append(Rectangle((k0[0], k0[1] + (2 - i) * 2.6 / H), 2.2 / W, 1.6 / H, transform=fig.transFigure, facecolor=cl,
                                  edgecolor='#888888', lw=0.3, zorder=9))

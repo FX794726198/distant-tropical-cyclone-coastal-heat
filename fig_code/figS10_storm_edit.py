@@ -112,11 +112,11 @@ axc.axvline(1500, color='k', lw=0.6, ls=(0, (3, 2)))
 R = N.R.values; s = N.null_sep.values
 wgt = np.where(s <= R, 1, np.where(s >= 1500, 0, 0.5 * (1 + np.cos(np.pi * (s - R) / (1500 - R)))))
 axc.set_ylim(0, 26)
-axc.text(0.99, 0.70, f'Real storm inside\nthe taper: {(s < 1500).mean():.0%};\nweight there:\nmedian {np.median(wgt[s < 1500]):.2f},\nmax {wgt.max():.2f}',
+axc.text(0.99, 0.70, f'Real TC inside\nthe taper: {(s < 1500).mean():.0%};\nweight there:\nmedian {np.median(wgt[s < 1500]):.2f},\nmax {wgt.max():.2f}',
          transform=axc.transAxes, ha='right', va='top', fontsize=6.5)
 axc.text(1510, 25.5, 'End of taper', fontsize=6.5, ha='left', va='top')
 axc.set_xlim(1150, 1950); axc.set_xticks([1200, 1400, 1600, 1800]); axc.set_xticklabels(['1,200', '1,400', '1,600', '1,800'])
-axc.set_xlabel('Null point to real storm (km)'); axc.set_ylabel('Initial states')
+axc.set_xlabel('Null point to real TC (km)'); axc.set_ylabel('Initial states')
 for k in ('top', 'right'): axc.spines[k].set_visible(False)
 
 # ---- row 2: the edit at the 19 stations, all hot cases (mean over leads), and the forecast after the edit
