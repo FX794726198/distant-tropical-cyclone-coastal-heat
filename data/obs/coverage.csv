@@ -1,0 +1,11 @@
+measure,group,days,days_used,station_days,share_station_days,stations_per_day,year0,year1,years,storms,storms_all
+14 LT,east,828,827,15551,0.9885,18.8,1980,2022,43,362,362
+14 LT,storm-free pool,4690,4684,88181,0.9896,18.83,1980,2022,43,,
+12-17 LT mean,east,828,827,15294,0.9722,18.49,1980,2022,43,362,362
+12-17 LT mean,storm-free pool,4690,4686,87065,0.9771,18.58,1980,2022,43,,
+hour of highest temperature,east,828,827,15526,0.9869,18.77,1980,2022,43,362,362
+hour of highest temperature,storm-free pool,4690,4684,88095,0.9886,18.81,1980,2022,43,,
+"highest of the reports, >= 4 reports",east,828,827,15547,0.9882,18.8,1980,2022,43,362,362
+"highest of the reports, >= 4 reports",storm-free pool,4690,4684,88172,0.9895,18.82,1980,2022,43,,
+"highest of the reports, >= 8 reports",east,828,825,7992,0.508,9.687,1980,2022,43,362,362
+"highest of the reports, >= 8 reports",storm-free pool,4690,4681,46597,0.5229,9.954,1980,2022,43,,

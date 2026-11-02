@@ -1,0 +1,10 @@
+4b27fa7df67ead3d0587cca56878f512  coast_normals.py
+11544534dadb345c6e671a5b4abbb53a  mech_gc.py
+174a548f20cb8d26be75cc2d1e957f0c  mech_win.py
+2c098477c5706ad73e0f74af3951151b  mech_era5.py
+de3d24df14c0b1152f2dfd262e8d0d78  mech.slurm
+82677baee1a742886846ca911a09ded1  inputs/all_oper_cases.csv
+7b18d804deb079dac0916c6f21d7dcb8  inputs/all_oper_regions.csv
+7baa5791d22cb6855608a5c55f61994b  inputs/all_small_cases.csv
+5a98d5cb963f74f763f1314ca0a97406  inputs/coast_normals.csv
+edd3bf455d1a64f462f029a21512e980  inputs/mech_era5.csv

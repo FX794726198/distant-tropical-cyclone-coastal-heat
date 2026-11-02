@@ -1,0 +1,108 @@
+
+================ oper: 3002 case-cells, 238 cases
+--- warm cases in 17 usable regions: 1734 case-cells; mean d_coast 108 km
+  distance to coast    [0.0, 50.0):  462 cells  d_free +0.29  d_full +0.26  d_null -0.01  ctl_err -0.48  share(d_free >= 0.5) 38%
+  distance to coast  [50.0, 150.0):  826 cells  d_free +0.61  d_full +0.70  d_null +0.01  ctl_err -0.83  share(d_free >= 0.5) 41%
+  distance to coast [150.0, 300.0):  401 cells  d_free +0.49  d_full +0.64  d_null +0.01  ctl_err -0.87  share(d_free >= 0.5) 30%
+  distance to coast [300.0, 1000000000.0):   45 cells  d_free +0.20  d_full +0.17  d_null -0.02  ctl_err -0.71  share(d_free >= 0.5) 18%
+  distance to storm [550.0, 800.0):  191 cells  d_free +0.35  d_full +0.11  d_null +0.08  ctl_err -0.53  share(d_free >= 0.5) 39%
+  distance to storm [800.0, 1000.0):  392 cells  d_free +0.49  d_full +0.58  d_null +0.00  ctl_err -0.53  share(d_free >= 0.5) 41%
+  distance to storm [1000.0, 1300.0):  779 cells  d_free +0.50  d_full +0.62  d_null -0.03  ctl_err -0.79  share(d_free >= 0.5) 40%
+  distance to storm [1300.0, 1000000000.0):  372 cells  d_free +0.45  d_full +0.51  d_null +0.02  ctl_err -0.86  share(d_free >= 0.5) 26%
+        ncell  n_strip  mean  null  strip  strip_null  inland  frac_cells_05
+region                                                                      
+W10        25       16  0.25 -0.04   0.23       -0.04    0.29           0.24
+W12        10       10 -0.44  0.28  -0.44        0.28     NaN           0.00
+W13        14       14  1.00  0.03   1.00        0.03     NaN           0.64
+W14        21       15  0.29  0.22   0.32        0.23    0.19           0.05
+W17         8        4  1.09 -0.04   1.31       -0.07    0.87           1.00
+W18        18       14  0.76  0.30   0.75        0.29    0.81           0.83
+W2         11        5  0.44  0.02   0.27       -0.04    0.58           0.45
+W20         9        9  0.72  0.11   0.72        0.11     NaN           0.56
+W21        10        8  1.34 -0.01   1.41       -0.02    1.03           1.00
+W22        29       16 -0.06 -0.20  -0.11       -0.22    0.01           0.00
+W23         8        8 -0.28 -0.05  -0.28       -0.05     NaN           0.00
+W3          8        8  0.84 -0.07   0.84       -0.07     NaN           0.75
+W4         28       18  0.34  0.19   0.28        0.20    0.44           0.21
+W5          8        8  0.63  0.02   0.63        0.02     NaN           1.00
+W6          6        3  0.68 -0.02   0.52       -0.01    0.84           0.83
+W8          4        4  0.45 -0.12   0.45       -0.12     NaN           0.75
+W9          3        3  0.74 -0.12   0.74       -0.12     NaN           0.67
+  regions with region mean ≥ 0.5: 9/17; with coastal-strip mean: 9/17; corr(ncell, mean) -0.31; strip minus inland, mean over regions -0.01 K
+--- cool cases in 11 usable regions: 1103 case-cells; mean d_coast 232 km
+  distance to coast    [0.0, 50.0):  171 cells  d_free -0.44  d_full -0.50  d_null -0.01  ctl_err -1.12  share(d_free >= 0.5) 28%
+  distance to coast  [50.0, 150.0):  334 cells  d_free -0.30  d_full -0.40  d_null +0.00  ctl_err -1.33  share(d_free >= 0.5) 25%
+  distance to coast [150.0, 300.0):  207 cells  d_free -0.01  d_full -0.24  d_null +0.06  ctl_err -1.02  share(d_free >= 0.5) 29%
+  distance to coast [300.0, 1000000000.0):  391 cells  d_free -0.22  d_full -0.37  d_null -0.11  ctl_err -0.25  share(d_free >= 0.5) 20%
+  distance to storm [550.0, 800.0):   93 cells  d_free -0.85  d_full -1.06  d_null -0.06  ctl_err -0.88  share(d_free >= 0.5) 18%
+  distance to storm [800.0, 1000.0):  243 cells  d_free -0.26  d_full -0.41  d_null -0.04  ctl_err -1.07  share(d_free >= 0.5) 28%
+  distance to storm [1000.0, 1300.0):  490 cells  d_free -0.33  d_full -0.41  d_null -0.02  ctl_err -0.79  share(d_free >= 0.5) 22%
+  distance to storm [1300.0, 1000000000.0):  277 cells  d_free -0.04  d_full -0.11  d_null -0.02  ctl_err -1.07  share(d_free >= 0.5) 27%
+        ncell  n_strip  mean  null  strip  strip_null  inland  frac_cells_05
+region                                                                      
+C1          3        3 -0.03  0.11  -0.03        0.11     NaN           0.33
+C12         3        3 -0.60  0.06  -0.60        0.06     NaN           0.00
+C15         5        0 -0.29 -0.21    NaN         NaN   -0.29           0.00
+C16         9        6 -0.53 -0.23  -0.66       -0.23   -0.27           0.00
+C17         5        5  0.24 -0.48   0.24       -0.48     NaN           0.00
+C18        14       10  0.00  0.45  -0.04        0.50    0.11           0.00
+C4         26       13 -0.78 -0.06  -1.11        0.00   -0.45           0.00
+C5         63       15  0.12  0.33   0.50        0.21    0.00           0.46
+C7         10        1 -0.02  0.18  -1.00        0.29    0.09           0.30
+C8         30       18  0.73 -0.09   0.91       -0.08    0.45           0.53
+C9          3        3 -0.54  0.09  -0.54        0.09     NaN           0.00
+  regions with region mean ≤ -0.3: 4/11; with coastal-strip mean: 5/10; corr(ncell, mean) +0.33; strip minus inland, mean over regions -0.22 K
+
+================ small: 3002 case-cells, 238 cases
+--- warm cases in 17 usable regions: 1734 case-cells; mean d_coast 108 km
+  distance to coast    [0.0, 50.0):  462 cells  d_free +0.29  d_full +0.21  d_null -0.01  ctl_err -0.12  share(d_free >= 0.5) 34%
+  distance to coast  [50.0, 150.0):  826 cells  d_free +0.54  d_full +0.59  d_null -0.02  ctl_err -0.08  share(d_free >= 0.5) 39%
+  distance to coast [150.0, 300.0):  401 cells  d_free +0.42  d_full +0.56  d_null -0.05  ctl_err +0.03  share(d_free >= 0.5) 27%
+  distance to coast [300.0, 1000000000.0):   45 cells  d_free +0.27  d_full +0.29  d_null -0.05  ctl_err +0.35  share(d_free >= 0.5) 20%
+  distance to storm [550.0, 800.0):  191 cells  d_free +0.39  d_full +0.03  d_null +0.04  ctl_err -0.23  share(d_free >= 0.5) 39%
+  distance to storm [800.0, 1000.0):  392 cells  d_free +0.48  d_full +0.53  d_null +0.02  ctl_err -0.01  share(d_free >= 0.5) 39%
+  distance to storm [1000.0, 1300.0):  779 cells  d_free +0.46  d_full +0.54  d_null -0.04  ctl_err -0.05  share(d_free >= 0.5) 36%
+  distance to storm [1300.0, 1000000000.0):  372 cells  d_free +0.33  d_full +0.38  d_null -0.05  ctl_err -0.08  share(d_free >= 0.5) 22%
+        ncell  n_strip  mean  null  strip  strip_null  inland  frac_cells_05
+region                                                                      
+W10        25       16  0.19 -0.06   0.11       -0.05    0.34           0.16
+W12        10       10 -0.36  0.20  -0.36        0.20     NaN           0.00
+W13        14       14  1.17  0.07   1.17        0.07     NaN           0.86
+W14        21       15  0.38  0.07   0.37        0.07    0.40           0.05
+W17         8        4  0.98 -0.06   1.06       -0.06    0.91           1.00
+W18        18       14  0.61  0.24   0.61        0.21    0.61           0.78
+W2         11        5  0.17 -0.12   0.08       -0.10    0.24           0.09
+W20         9        9  0.64 -0.00   0.64       -0.00     NaN           0.44
+W21        10        8  1.03 -0.01   1.06       -0.01    0.91           1.00
+W22        29       16 -0.04 -0.18  -0.10       -0.20    0.02           0.00
+W23         8        8 -0.21 -0.07  -0.21       -0.07     NaN           0.00
+W3          8        8  0.71  0.04   0.71        0.04     NaN           0.62
+W4         28       18  0.15  0.01   0.13        0.01    0.20           0.04
+W5          8        8  0.46  0.04   0.46        0.04     NaN           0.75
+W6          6        3  0.53 -0.02   0.19       -0.03    0.86           0.33
+W8          4        4  0.53 -0.11   0.53       -0.11     NaN           0.75
+W9          3        3  0.67 -0.16   0.67       -0.16     NaN           0.67
+  regions with region mean ≥ 0.5: 9/17; with coastal-strip mean: 8/17; corr(ncell, mean) -0.33; strip minus inland, mean over regions -0.11 K
+--- cool cases in 11 usable regions: 1103 case-cells; mean d_coast 232 km
+  distance to coast    [0.0, 50.0):  171 cells  d_free -0.41  d_full -0.58  d_null -0.04  ctl_err -0.20  share(d_free >= 0.5) 22%
+  distance to coast  [50.0, 150.0):  334 cells  d_free -0.31  d_full -0.53  d_null -0.05  ctl_err -0.18  share(d_free >= 0.5) 23%
+  distance to coast [150.0, 300.0):  207 cells  d_free -0.01  d_full -0.31  d_null -0.01  ctl_err +0.01  share(d_free >= 0.5) 33%
+  distance to coast [300.0, 1000000000.0):  391 cells  d_free -0.38  d_full -0.57  d_null -0.02  ctl_err +0.27  share(d_free >= 0.5) 19%
+  distance to storm [550.0, 800.0):   93 cells  d_free -0.70  d_full -1.12  d_null -0.06  ctl_err +0.20  share(d_free >= 0.5) 22%
+  distance to storm [800.0, 1000.0):  243 cells  d_free -0.30  d_full -0.59  d_null -0.05  ctl_err -0.17  share(d_free >= 0.5) 24%
+  distance to storm [1000.0, 1300.0):  490 cells  d_free -0.40  d_full -0.55  d_null -0.00  ctl_err +0.06  share(d_free >= 0.5) 21%
+  distance to storm [1300.0, 1000000000.0):  277 cells  d_free -0.05  d_full -0.15  d_null -0.09  ctl_err -0.28  share(d_free >= 0.5) 29%
+        ncell  n_strip  mean  null  strip  strip_null  inland  frac_cells_05
+region                                                                      
+C1          3        3 -0.18  0.21  -0.18        0.21     NaN           0.00
+C12         3        3 -0.54  0.00  -0.54        0.00     NaN           0.00
+C15         5        0 -0.46 -0.05    NaN         NaN   -0.46           0.00
+C16         9        6 -0.50 -0.32  -0.58       -0.34   -0.33           0.00
+C17         5        5  0.15 -0.33   0.15       -0.33     NaN           0.00
+C18        14       10  0.00  0.20  -0.06        0.24    0.16           0.00
+C4         26       13 -0.66 -0.04  -0.93       -0.05   -0.39           0.00
+C5         63       15 -0.09  0.22   0.23        0.17   -0.19           0.30
+C7         10        1 -0.23  0.17  -0.95        0.35   -0.15           0.10
+C8         30       18  0.83 -0.14   0.93       -0.12    0.68           0.57
+C9          3        3 -0.51  0.08  -0.51        0.08     NaN           0.00
+  regions with region mean ≤ -0.3: 5/11; with coastal-strip mean: 5/10; corr(ncell, mean) +0.31; strip minus inland, mean over regions -0.19 K

@@ -1,0 +1,8 @@
+The data, figures and tables in data/, fig/ and tables/ are licensed under the
+Creative Commons Attribution 4.0 International License (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+Copyright (c) 2026 Xiao Feng, Juan Du, Bo Chai and Luigi Lombardo
+
+Data derived from third-party sources (ERA5, IBTrACS, NOAA ISD/ISD-Lite, GSOD,
+GHCN-Daily, GHS-POP, WeatherBench 2) remain subject to the terms of those sources.
