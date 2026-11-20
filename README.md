@@ -12,14 +12,14 @@ pip install -r requirements.txt
 ```
 
 Run everything from the repository root. Rendered with the software listed below, all 17 figures are identical,
-pixel for pixel, to those in `fig/`. Other versions of Matplotlib or other fonts move text slightly.
+pixel for pixel, to those in the manuscript. Other versions of Matplotlib or other fonts move text slightly. Rendered
+figures are not stored in the repository.
 
 ## Contents
 
 | Folder | What it holds |
 |---|---|
 | `fig_code/` | One script per figure, named after the figure (`figcommon.py`: shared style; `ggc_common.py`: region inputs shared by several figures) |
-| `fig/` | The figures as in the manuscript |
 | `tables/` | Supplementary Tables S1–S12 as in the manuscript (Markdown) |
 | `scripts/global/` | Global map: ERA5 and IBTrACS retrieval, exposure days and anomalies (`gl_map.py`), circulation analogues (`gl_stage2.py`), cool-cell check |
 | `scripts/model/ggc/` | Storm removal in GraphCast on the coasts of the global map: case selection, runs on the cluster, readings, distance from the coast; `RUN.md` gives the run order |
@@ -131,7 +131,7 @@ SciPy version, it can change single grid values of Fig. 2b, while the coast mean
 ## Software
 
 Figures and tables: Python 3.13 with numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, xarray 2026.9.0, Matplotlib 3.11.2,
-cartopy 0.26.0 and shapely 2.2.0, with Arial or, where Arial is not installed, Liberation Sans (the figures in `fig/` use
+cartopy 0.26.0 and shapely 2.2.0, with Arial or, where Arial is not installed, Liberation Sans (the manuscript figures use
 Liberation Sans). Cluster steps: Python 3.11 with numpy, pandas, xarray, netCDF4 and JAX; GraphCast
 (https://github.com/google-deepmind/graphcast) on one A100 GPU; WRF and WPS 4.6.1.
 
@@ -141,7 +141,7 @@ Pangu-Weather forecasts (WeatherBench 2), Natural Earth.
 
 ## Licence
 
-Code: MIT licence (`LICENSE`). Data and figures in `data/`, `fig/` and `tables/`: Creative Commons Attribution 4.0
+Code: MIT licence (`LICENSE`). Data and tables in `data/` and `tables/`: Creative Commons Attribution 4.0
 International (`LICENSE-DATA`). Data derived from third-party sources keep the terms of those sources.
 
 ## Citation
